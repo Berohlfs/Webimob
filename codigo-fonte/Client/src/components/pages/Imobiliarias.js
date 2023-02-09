@@ -21,7 +21,7 @@ function Imobiliarias(){
             setImobiliarias(res.data);
             setBusca(res.data)
         }catch (error) {
-            toast.error(error);
+            toast.error(error.response.data);
         }
     }
 
@@ -37,7 +37,7 @@ function Imobiliarias(){
         setImobiliarias(newArray);
         toast.success(data);
       })
-      .catch(({ data }) => toast.error(data));
+      .catch(({ error }) => toast.error(error.response.data));
       getImobiliarias(filtro)
   };
 

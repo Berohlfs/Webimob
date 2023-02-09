@@ -105,7 +105,7 @@ function NovaImobiliaria(props){
                 uf: imobiliariaInfo.uf.value,
             })
             .then(({data})=>toast.success(data))
-            .catch(({data})=>toast.error(data))
+            .catch(({error})=>toast.error(error.response.data))
 
         }else{
             await axios

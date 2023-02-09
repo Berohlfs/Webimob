@@ -1,0 +1,44 @@
+nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0 0 0.6em var(--default-shadow-color);
+}
+
+nav {
+    width: 225px;
+    height: 100%;
+    background-color: var(--white);
+    overflow: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    z-index: 1;
+    text-decoration: none;
+}
+nav::-webkit-scrollbar {
+    display: none;
+}
+.navlist {
+    /*Listas dentro da barra de navegação*/
+    padding: 0 10px;
+    position: relative;
+    top: 100px;
+}
+.navlist>li {
+    border-radius: 20px;
+    padding: 7px 11px;
+    transition: 0.2s;
+    cursor: pointer;
+    color: var(--default-text-color);
+}
+.navlist>li:hover {
+    background-color: var(--lightgrey);
+}
+.navlist>li>img{
+    opacity:0.4;
+    margin: 0 0 0 5px;
+}
+nav hr{
+    margin:10px auto;
+    width:180px;
+}

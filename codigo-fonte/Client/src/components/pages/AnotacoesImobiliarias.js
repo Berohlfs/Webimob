@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import Modal from "../assets/Modal"
-import TableCrud from "../assets/tables/table_crud/TableCrud";
 import axios from "axios";
 import {toast} from "react-toastify"
 import { useRef } from "react";
@@ -11,17 +10,22 @@ const AnotacoesImobiliarias = ({setAbreModal,id}) =>{
 
 
     const [anotacoes, setAnotacoes] = useState('')
-    var teste;
+    const [change, setChange] = useState(false)
+    const ref = useRef()
+
     const getAnotacoes = async ()=>{
+
+        const textBoxValue = ref.current
         try{
+            
             const res = await axios.get(`http://localhost:1324/imobiliarias/anotacoes/${id}`);
             
-            setAnotacoes(res.data.ANOTACOES);
-
-
-            console.log(anotacoes)
+            const response = res.data.ANOTACOES
+            textBoxValue.textAnotacoes.value = response
+            console.log(response)
+            
         }catch (error) {
-            toast.error("Não foi possivel acessar anotações.");
+            toast.error("Não foi possivel acessar anotações." + error);
         }
     }
 
@@ -35,9 +39,15 @@ const AnotacoesImobiliarias = ({setAbreModal,id}) =>{
                 anotacoes
             });
             toast.success("Anotações salvas com sucesso.")
+            setChange(false)
         } catch (error) {
          toast.error("Não foi possível salvar as anotações.")
         }
+    }
+
+    const handleChange = (e) =>{
+        setAnotacoes(e.target.value)
+        setChange(true)
     }
 
 
@@ -45,9 +55,10 @@ const AnotacoesImobiliarias = ({setAbreModal,id}) =>{
     <>
      <Modal
         conteudo={{
-            body:<textarea onChange={(e) => setAnotacoes(e.target.value)} placeholder="Digite aqui suas anotações...">{anotacoes}</textarea> ,
+            body:<form ref={ref}><textarea name="textAnotacoes" onChange={handleChange} placeholder="Digite aqui suas anotações..."></textarea ></form> ,
 
-            footer: <button onClick={handleSubmit} type="button">Salvar</button>,
+            
+            footer: change?<button onClick={handleSubmit} type="button">Salvar</button>:"",
             title: "ANOTAÇÕES"
           }}
 

@@ -38,7 +38,7 @@ function NovaImobiliaria(props){
         const imobiliariaInfo = ref.current; 
         try {
             axios.get(`http://localhost:1324/imobiliarias/${id}`)
-            .then(async res=>{
+            .then(res=>{
                 const imobiliaria = res.data
 
                 imobiliariaInfo.nome.value = imobiliaria.NOME

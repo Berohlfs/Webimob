@@ -20,6 +20,8 @@ function Imobiliarias(){
             const res = await axios.get(`http://localhost:1324/imobiliarias?sort=${filtro}:asc`);
             setImobiliarias(res.data);
             setBusca(res.data)
+            
+            
         }catch (error) {
             toast.error(error.response.data);
         }

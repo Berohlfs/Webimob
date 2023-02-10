@@ -45,6 +45,9 @@ class Imobiliaria extends Model {
         STATUS: {
           type: Sequelize.STRING(15),
         },
+        ANOTACOES: {
+          type: Sequelize.TEXT,
+        },
       },
       {
         sequelize,

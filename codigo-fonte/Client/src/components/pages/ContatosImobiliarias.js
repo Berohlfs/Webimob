@@ -6,7 +6,7 @@ import axios from "axios";
 import {toast} from "react-toastify"
 import { useRef } from "react";
 
-const ContatosImobiliarias = ({setAbreModalContatos,id}) =>{
+const ContatosImobiliarias = ({setAbreModal,id}) =>{
 
     const ref = useRef()
 
@@ -154,11 +154,11 @@ const ContatosImobiliarias = ({setAbreModalContatos,id}) =>{
             </>,
 
             
-            footer: <button onClick={()=>{setAbreModalContatos(false)}} type="button">Ok</button>,
+// footer: <button onClick={()=>{setAbreModal(false)}} type="button">Ok</button>,
             title: "CONTATOS"
           }}
 
-        fechaModal={setAbreModalContatos} />
+        fechaModal={setAbreModal} />
     </>
     )
 

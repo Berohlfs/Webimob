@@ -200,6 +200,41 @@ class ImobiliariaController {
       res.status(500).json({ error });
     }
   }
+
+  async indexAnotacoes(req,res){
+    try{
+      const anotacoes = await Imobiliaria.findByPk(req.params.id,{
+        attributes:['ANOTACOES']
+      })
+      res.status(200).json(anotacoes);
+
+    }catch(error){
+      res.status(500).json({ error });
+    }
+
+  }
+
+  async updateAnotacoes(req,res){
+    try {
+
+      await Imobiliaria.update({
+        
+        ANOTACOES: req.body.anotacoes
+
+      },{
+        where: { id: req.params.id }
+      })
+
+      res.status(200).json('Anotações salvas com sucesso!');
+      
+    } catch (error) {
+
+      res.status(500).json({ error });
+      
+    }
+    
+  }
+
 }
 
 export default new ImobiliariaController();

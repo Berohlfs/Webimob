@@ -6,8 +6,9 @@ import edit from "../../img/edit-16.png"
 import cancel from "../../img/x-mark-16.png"
 import arquivo from "../../img/text-file-3-16.png"
 import contato from "../../img/contacts-16.png"
+import anotacoes from "../../img/copywriting-16.png"
 
-import { useParams } from "react-router-dom"
+import { useAsyncError, useParams } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
 import { toast } from "react-toastify"
 import axios from "axios"
@@ -17,6 +18,7 @@ import InputMask from "react-input-mask";
 
 import AnexosImobiliarias from "./AnexosImobiliarias"
 import ContatosImobiliarias from "./ContatosImobiliarias"
+import AnotacoesImobiliarias from "./AnotacoesImobiliarias"
 
 
     
@@ -29,9 +31,7 @@ function NovaImobiliaria(props){
     const ref = useRef()
     const [editar, setEditar] = useState(props.detalhes? true : false)
 
-    const[abreModalAnexos,setAbreModalAnexos] = useState(false)
-    const[abreModalContatos,setAbreModalContatos] = useState(false)
- 
+    const[abreModal,setAbreModal]= useState(false) 
     
     const getImobiliariaInfo =()=>{
 
@@ -158,15 +158,19 @@ function NovaImobiliaria(props){
 
 
     return <>
-    {abreModalAnexos && <AnexosImobiliarias setAbreModalAnexos={setAbreModalAnexos} id={id} />}
-    {abreModalContatos && <ContatosImobiliarias setAbreModalContatos={setAbreModalContatos} id={id} />}
+    {abreModal === "anexos" ? <AnexosImobiliarias setAbreModal={setAbreModal} id={id} />:
+    (abreModal === "contatos" ? <ContatosImobiliarias setAbreModal={setAbreModal} id={id} />:
+    abreModal === "anotacoes" && <AnotacoesImobiliarias setAbreModal={setAbreModal} id={id} />)}
+
+    {}
     
         <form ref={ref} onSubmit={handleSubmit}>
 
         {props.detalhes&&
             (<div class="div-hfill2">
-                <button onClick={()=>{setAbreModalAnexos(true)}} type='button'className="button-edit">Anexos<img src={arquivo} alt=""/></button>
-                <button onClick={()=>{setAbreModalContatos(true)}} type='button'className="button-edit">Contatos<img src={contato} alt=""/></button>
+                <button onClick={()=>{setAbreModal("anexos")}} type='button'className="button-edit">Anexos<img src={arquivo} alt=""/></button>
+                <button onClick={()=>{setAbreModal("contatos")}} type='button'className="button-edit">Contatos<img src={contato} alt=""/></button>
+                <button onClick={()=>{setAbreModal("anotacoes")}} type='button'className="button-edit">Anotações<img src={anotacoes} alt=""/></button>
             </div>)
         }
 

@@ -5,7 +5,7 @@ import TableAnexos from "../assets/tables/table_anexos/TableAnexos";
 import axios from "axios";
 import {toast} from "react-toastify"
 
-const AnexosImobiliarias = ({setAbreModalAnexos,id}) =>{
+const AnexosImobiliarias = ({setAbreModal,id}) =>{
 
     const columns = [
             
@@ -46,11 +46,11 @@ const AnexosImobiliarias = ({setAbreModalAnexos,id}) =>{
             body: 
             <TableAnexos id={id} handleDelete={handleDelete} columns={columns} data={anexos} getAnexos={getAnexos} setAnexos={setAnexos}/>, 
             
-            footer: <button onClick={()=>{setAbreModalAnexos(false)}} type="button">Ok</button>,
+            // footer: <button onClick={()=>{setAbreModal(false)}} type="button">Ok</button>,
             title: "ANEXOS"
           }}
 
-        fechaModal={setAbreModalAnexos} />
+        fechaModal={setAbreModal} />
     </>
     )
 

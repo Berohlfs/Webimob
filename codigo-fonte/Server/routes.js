@@ -23,6 +23,9 @@ router.delete('/imobiliarias/:id', imobiliarias.delete);
 router.put('/imobiliarias/:id', imobiliarias.update);
 router.get('/imobiliarias/:id', imobiliarias.show);
 
+router.get('/imobiliarias/anotacoes/:id', imobiliarias.indexAnotacoes);
+router.put('/imobiliarias/anotacoes/:id', imobiliarias.updateAnotacoes);
+
 // Files Imobiliarias
 router.post('/imobiliarias/files/:id', upload.single('file'), filesImobiliaria.create);
 router.get('/imobiliarias/files/:id', filesImobiliaria.index);

@@ -15,6 +15,7 @@ class Usuario extends Model {
       },
     );
   }
+  this.addHook("beforeSave",)
 }
 
 export default Usuario;

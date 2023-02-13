@@ -21,7 +21,7 @@ import ContatosImobiliarias from "./ContatosImobiliarias"
 import AnotacoesImobiliarias from "./AnotacoesImobiliarias"
 
 
-    
+
 
 
 
@@ -31,11 +31,11 @@ function NovaImobiliaria(props){
     const ref = useRef()
     const [editar, setEditar] = useState(props.detalhes? true : false)
 
-    const[abreModal,setAbreModal]= useState(false) 
-    
+    const[abreModal,setAbreModal]= useState(false)
+
     const getImobiliariaInfo =()=>{
 
-        const imobiliariaInfo = ref.current; 
+        const imobiliariaInfo = ref.current;
         try {
             axios.get(`http://localhost:1324/imobiliarias/${id}`)
             .then(res=>{
@@ -127,18 +127,18 @@ function NovaImobiliaria(props){
             fone1: imobiliariaInfo.fone1.value,
             fone2: imobiliariaInfo.fone2.value,
             fone3: imobiliariaInfo.fone3.value,
-            
+
         })
         .then(({data})=>toast.success(data))
         .catch((error)=>{
             console.log(error)
-            toast.warning(error.response.data)
+            toast.warning('Erro de conexão com o servidor')
         })
         }
     }
 
     const checkCEP = (e)=>{
-        const imobiliariaInfo = ref.current; 
+        const imobiliariaInfo = ref.current;
         const cep = e.target.value.replace(/\D/g, '')
         fetch(`https://viacep.com.br/ws/${cep}/json/`)
         .then(res=>res.json())
@@ -150,7 +150,7 @@ function NovaImobiliaria(props){
             imobiliariaInfo.logradouro.value = data.logradouro || "Carregando..."
             imobiliariaInfo.cidade.value = data.localidade || "Carregando..."
             imobiliariaInfo.uf.value = data.uf|| "Carregando..."
-            imobiliariaInfo.complemento.value = data.complemento || " " 
+            imobiliariaInfo.complemento.value = data.complemento || " "
         }).catch(()=>{
             toast.error("Digite um CEP valido")
         })
@@ -163,7 +163,7 @@ function NovaImobiliaria(props){
     abreModal === "anotacoes" && <AnotacoesImobiliarias setAbreModal={setAbreModal} id={id} />)}
 
     {}
-    
+
         <form ref={ref} onSubmit={handleSubmit}>
 
         {props.detalhes&&
@@ -179,17 +179,17 @@ function NovaImobiliaria(props){
 
 
             {props.detalhes&&
-                (   
+                (
                 editar?
                 <button type='button' onClick={toggleEditar} className="button-edit">Editar<img src={edit} alt=""/></button>:
                 <button type='button' onClick={toggleEditar} className="button-edit">Cancelar<img src={cancel} alt=""/></button>)
-            }           
+            }
 
             {!editar &&
             <button type="submit">Salvar<img src={save} alt=""/></button>
             }
         </div>
-        
+
             <div className="texthr" style={{display:"flex"}}>
                 <h2>Informações Básicas</h2>
                 <hr/>
@@ -1472,7 +1472,7 @@ function NovaImobiliaria(props){
                         <td>
                             <div className="div-input div-input-number">
                                 <label htmlFor=""><img src={fogo} alt="incendio"/></label>
-                               
+
                                 <select name="" id="">
                                     <option value="" selected hidden>Porto Seguro</option>
                                     <option value="">Pottencial</option>
@@ -1548,9 +1548,9 @@ function NovaImobiliaria(props){
         </form>
 
 
-    
 
-       
+
+
     </>
 }
 export default NovaImobiliaria;

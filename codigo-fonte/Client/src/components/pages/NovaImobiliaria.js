@@ -132,7 +132,7 @@ function NovaImobiliaria(props){
         .then(({data})=>toast.success(data))
         .catch((error)=>{
             console.log(error)
-            toast.warning('Erro de conexão com o servidor')
+            toast.error('Erro de conexão com o servidor')
         })
         }
     }

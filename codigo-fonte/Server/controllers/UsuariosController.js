@@ -1,6 +1,6 @@
 import { Op } from 'sequelize';
 import { parseISO } from 'date-fns';
-import bcrypt from 'bcryptjs';
+
 import Usuario from '../models/Imobiliaria/Usuario';
 
 class UsuariosController {

@@ -1,5 +1,6 @@
 import { Op } from 'sequelize';
 import { parseISO } from 'date-fns';
+import * as Yup from 'yup';
 
 import Usuario from '../models/Imobiliaria/Usuario';
 
@@ -107,6 +108,15 @@ class UsuariosController {
   }
 
   async create(req, res) {
+    const schema = Yup.object().shape({
+      nome: Yup.string(),
+      cpf_cnpj: Yup.string().string(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Erro ao validar o schema.' });
+    }
+
     const usuario = await Usuario.findOne({
       where: { USUARIO: req.body.cpf_cnpj },
     });

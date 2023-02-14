@@ -1,3 +1,4 @@
+import * as Yup from 'yup';
 import { Op } from 'sequelize';
 import { parseISO } from 'date-fns';
 import Imobiliaria from '../models/Imobiliaria/Imobiliaria';
@@ -125,6 +126,14 @@ class ImobiliariaController {
       { NUMERO: req.body.fone2, ORDEM: 2 },
       { NUMERO: req.body.fone3, ORDEM: 3 },
     ];
+    const schema = Yup.object().shape({
+      nome: Yup.string().required(),
+      cpf_cnpj: Yup.string().string().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Erro ao validar o schema.' });
+    }
     const imobiliaria = await Imobiliaria.findOne({
       where: { CPF_CNPJ: req.body.cpf_cnpj },
     });
@@ -167,6 +176,14 @@ class ImobiliariaController {
   }
 
   async update(req, res) {
+    const schema = Yup.object().shape({
+      nome: Yup.string(),
+      cpf_cnpj: Yup.string().string(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Erro ao validar o schema.' });
+    }
     await Imobiliaria.upsert({
 
       id: req.params.id, // parametro de roq existente do upsert
@@ -201,40 +218,32 @@ class ImobiliariaController {
     }
   }
 
-  async indexAnotacoes(req,res){
-    try{
-      const anotacoes = await Imobiliaria.findByPk(req.params.id,{
-        attributes:['ANOTACOES']
-      })
+  async indexAnotacoes(req, res) {
+    try {
+      const anotacoes = await Imobiliaria.findByPk(req.params.id, {
+        attributes: ['ANOTACOES'],
+      });
       res.status(200).json(anotacoes);
-
-    }catch(error){
+    } catch (error) {
       res.status(500).json({ error });
     }
-
   }
 
-  async updateAnotacoes(req,res){
+  async updateAnotacoes(req, res) {
     try {
-
       await Imobiliaria.update({
-        
-        ANOTACOES: req.body.anotacoes
 
-      },{
-        where: { id: req.params.id }
-      })
+        ANOTACOES: req.body.anotacoes,
+
+      }, {
+        where: { id: req.params.id },
+      });
 
       res.status(200).json('Anotações salvas com sucesso!');
-      
     } catch (error) {
-
       res.status(500).json({ error });
-      
     }
-    
   }
-
 }
 
 export default new ImobiliariaController();

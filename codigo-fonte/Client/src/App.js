@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Container from "./components/layout/Container";
 import NovaImobiliaria from "./components/pages/NovaImobiliaria";
+import Login from "./components/pages/Login";
+import RotasProtegidas from "./components/pages/RotasProtegidas";
 
 
 function App() {
@@ -23,7 +25,8 @@ function App() {
     <Container>
       <Routes>
         <Route path="/" element= {<Home />} />
-        <Route path="/imobiliarias" element= {<Imobiliarias />} />
+        <Route path="/login" element= {<Login />} />
+        <RotasProtegidas path="/imobiliarias" element= {<Imobiliarias />} />
         <Route path="/imobiliarias/novaImobiliaria" element= {<NovaImobiliaria />} />
         <Route path="/imobiliarias/detalhesImobiliaria/:id" element= {<NovaImobiliaria detalhes={true}/>} />
       </Routes> 

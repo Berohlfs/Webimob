@@ -120,19 +120,19 @@ class UsuariosController {
     }
 
     const usuario = await Usuario.findOne({
-      where: { USUARIO: req.body.cpf_cnpj },
+      where: { USUARIO: req.body.usuario },
     });
+
     try {
       if (usuario == null) {
         await Usuario.create({
           USUARIO: req.body.usuario,
           NOME: req.body.nome,
-          PASSWORD_HASH: req.body.password,
-
+          password: req.body.password,
         });
         return res.status(200).json('Usuário cadastrado com sucesso!');
       }
-      return res.status(406).json('CPF/CNPJ já cadastrado no sistema!');
+      return res.status(406).json('Nome de usuário já cadastrado no sistema!');
     } catch (error) {
       return res.status(500).json({ error });
     }

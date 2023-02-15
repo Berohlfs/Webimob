@@ -8,13 +8,15 @@ import filesImobiliaria from './controllers/FilesControllerImobiliaria';
 import sessions from './controllers/SessionsController';
 import auth from './middlewares/auth';
 import contatosImobiliaria from './controllers/ContatoImobiliariaController';
+import usuarios from './controllers/UsuariosController';
 
 const router = new Router();
 const upload = multer(multerConfig);
-// Sessions
-//router.post('/sessions', sessions.create);
 
-//router.use(auth);
+// Sessions
+router.post('/sessions', sessions.create);
+
+router.use(auth);
 
 // Imobiliarias
 router.get('/imobiliarias', imobiliarias.index);
@@ -38,5 +40,12 @@ router.get('/imobiliarias/contatos/:id', contatosImobiliaria.index);
 router.put('/imobiliarias/contatos/:id', contatosImobiliaria.update);
 router.get('/imobiliarias/contatos/detalhes/:id', contatosImobiliaria.show);
 router.delete('/contatos/:id', contatosImobiliaria.delete);
+
+// Usuarios
+router.post('/usuarios', usuarios.create);
+router.get('/usuarios', usuarios.index);
+router.put('/usuarios/:id', usuarios.update);
+router.get('/usuarios/:id', usuarios.show);
+router.delete('/usuarios/:id', usuarios.delete);
 
 export default router;

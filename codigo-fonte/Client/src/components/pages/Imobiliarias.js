@@ -13,6 +13,7 @@ function Imobiliarias(){
     const [imobiliarias,setImobiliarias]=useState([])
     const [busca, setBusca] = useState([])
     const [filtro, setFiltro] = useState('NOME')
+    
 
 
     const getImobiliarias = async (filtro) =>{

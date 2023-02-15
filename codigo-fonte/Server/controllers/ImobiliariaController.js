@@ -128,7 +128,7 @@ class ImobiliariaController {
     ];
     const schema = Yup.object().shape({
       nome: Yup.string().required(),
-      cpf_cnpj: Yup.string().string().required(),
+      cpf_cnpj: Yup.string().required(),
     });
 
     if (!(await schema.isValid(req.body))) {

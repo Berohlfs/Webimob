@@ -109,8 +109,10 @@ class UsuariosController {
 
   async create(req, res) {
     const schema = Yup.object().shape({
-      nome: Yup.string(),
-      cpf_cnpj: Yup.string().string(),
+      usuario: Yup.string().required(),
+      password: Yup.string().required().min(8),
+      nome: Yup.string().required(),
+
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -136,13 +138,54 @@ class UsuariosController {
     }
   }
 
-  async update() {
+  async update(req, res) {
+    const schema = Yup.object().shape({
+      usuario: Yup.string(),
+      oldPassword: Yup.string().min(8),
+      password: Yup.string().min(8).when('oldPassword', (oldPassword, field) => (oldPassword ? field.required() : field)),
+      nome: Yup.string(),
 
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Erro ao validar o schema.' });
+    }
+
+    const { oldPassword } = req.body;
+
+    if (oldPassword && !(await Usuario.checkPassword(oldPassword))) {
+      return res.status(401).json({ error: 'Senha incorreta.' });
+    }
+
+    const usuario = await Usuario.findOne({
+      where: { USUARIO: req.body.cpf_cnpj },
+    });
+    try {
+      if (usuario == null) {
+        await Usuario.update({
+          USUARIO: req.body.usuario,
+          NOME: req.body.nome,
+          PASSWORD_HASH: req.body.password,
+        }, {
+          where: { id: req.params.id },
+        });
+        return res.status(200).json('Usuário cadastrado com sucesso!');
+      }
+      return res.status(406).json('CPF/CNPJ já cadastrado no sistema!');
+    } catch (error) {
+      return res.status(500).json({ error });
+    }
   }
 
-  async delete() {
+  async delete(req, res) {
+    const usuario = await Usuario.findByPk(req.params.id);
 
+    if (!usuario) {
+      return res.status(404).json();
+    }
+    await Usuario.destroy();
+    return res.json();
   }
 }
-// feriado do carnaval, retornaremos as atividades normais na quinta feira
+
 export default new UsuariosController();

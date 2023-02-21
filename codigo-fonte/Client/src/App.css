@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --first-color:hsl(199, 70%, 20%);
+    --second-color:hsl(195, 70%, 27%);
+    --third-color:hsl(32, 93%, 63%);
+    --fourth-color:hsl(23, 94%, 65%);
+    --negative-color:rgb(194, 0, 0);
+
+    --transparent:transparent;
+}

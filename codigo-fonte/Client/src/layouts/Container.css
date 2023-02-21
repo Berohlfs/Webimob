@@ -1,0 +1,16 @@
+#main{
+    min-height: calc(100vh - 80px);
+    width: calc(100% - 200px);
+
+    background-color: var(--lightergrey);
+
+    position:relative;
+    left: 200px;
+    z-index: 0;
+
+    transition: 0.3s;
+}
+.responsive-container{
+    width: calc(100% - 20px);
+    left: 20px;
+}

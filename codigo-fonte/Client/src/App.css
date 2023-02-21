@@ -12,4 +12,8 @@
     --negative-color:rgb(194, 0, 0);
 
     --transparent:transparent;
+
+    --white: #fff;
+    --lightgrey: #ccc;
+    --lightergrey: #eee;
 }

@@ -1,8 +1,9 @@
+import { useRef } from 'react'
 import './Menu.css'
 
-const Menu = () => {
+const Menu = ({isResponsive, toggle}) => {
     return (
-        <nav>
+        <nav className={ isResponsive ? 'responsive-menu' : ''} onClick={toggle}>
 
         </nav>
     )

@@ -1,5 +1,7 @@
-import './Header.css'
+//Imagens
 import webimob_logo from '../images/logo-120x18.png'
+//Componentes
+import './Header.css'
 
 const Header = ({title})=> {
     return (

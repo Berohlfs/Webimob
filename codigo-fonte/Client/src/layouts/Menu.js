@@ -1,13 +1,20 @@
+//CSS
 import './Menu.css'
+//Imagens
 import drag_icon from '../images/drag-icon-12x18.png'
+//Componentes
 import NavLiExpandable from '../assets/NavLiExpandable'
 import NavLiDefault from '../assets/NavLiDefault'
 
-const Menu = ({isResponsive, toggle}) => {
+const Menu = (props) => {
+
     return (
-        <nav className={`menu ${isResponsive ? 'responsive-menu' : ''}`}>
-            <div id={'toggle-div'} onClick={toggle}>
+        <nav className={`menu ${props.responsiveState ? 'responsive-menu' : ''}`}>
+
+            <div id={'toggle-div'} onClick={props.responsiveFunction}>
+
                 <img id={'toggle-img'} src={drag_icon} alt={'expandir/recolher'}/>
+
             </div>
 
             <NavLiDefault title={'Página inicial'} link={'https://instagram.com'}/>
@@ -25,6 +32,7 @@ const Menu = ({isResponsive, toggle}) => {
             <NavLiExpandable title={'Logs'} array={[{name : 'Exe1', link : 'https://instagram.com'},{name : 'Ex2', link : 'https://instagram.com'}]}/>
 
         </nav>
+
     )
 }
 

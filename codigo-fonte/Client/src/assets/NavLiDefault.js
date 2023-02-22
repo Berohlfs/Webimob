@@ -1,3 +1,4 @@
+//CSS
 import './NavLi.css'
 
 const NavLiDefault = ({title, link})=> {

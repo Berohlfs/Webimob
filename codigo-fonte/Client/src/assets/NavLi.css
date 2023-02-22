@@ -5,12 +5,11 @@
     color:var(--darkgrey);
 }
 .expanded-nav-div{
-    height:auto;
+    height: auto;
     overflow: auto;
 }
 .nav-div p{
     font-size: 16px;
-    width: 100%;
     display: flex;
     align-items: center;
     padding: 15px;

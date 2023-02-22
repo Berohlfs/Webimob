@@ -1,13 +1,16 @@
+//CSS
 import './NavLi.css'
-import { useState } from 'react'
+//Imagens
 import expand_icon from '../images/expand-icon-15x9.png'
+//Libs
+import { useState } from 'react'
 
 const NavLiExpandable = ({title, array})=> {
 
-    const [expanded, setExpanded] = useState()
-
     const li_array = array.map((item)=> <a key={String(item.name)} href={item.link}><li>{item.name}</li></a>)
 
+    const [expanded, setExpanded] = useState(false)
+    
     const toggle = ()=> {
         expanded ? setExpanded(false) : setExpanded(true)
     }

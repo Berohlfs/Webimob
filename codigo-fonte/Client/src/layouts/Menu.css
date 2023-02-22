@@ -11,18 +11,24 @@
     z-index: 1;
 
     transition: 0.4s;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.menu::-webkit-scrollbar{
+    display:none;
 }
 
 .responsive-menu{
-    left: -180px;
+    left: -175px;
 }
 
 div#toggle-div{
     background-color: var(--lightgrey);
     box-shadow: 0 0 0.2em var(--grey);
-    padding: 30px 0px;
-    border-radius: 15px;
-    box-sizing: border-box;
+    padding: 40px 3px;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
 
     display: flex;
     align-items: center;
@@ -30,11 +36,11 @@ div#toggle-div{
 
     position: absolute;
     top: calc(50% - 42px);
-    right:-12px;
+    right:0px;
 
     cursor:pointer;
 }
 
 img#toggle-img{
-    opacity: 0.6;
+    opacity: 0.5;
 }

@@ -1,0 +1,32 @@
+.nav-div{
+    height: 50px;
+    overflow: hidden;
+    transition: 0.3s;
+    color:var(--darkgrey);
+}
+.expanded-nav-div{
+    height:auto;
+    overflow: auto;
+}
+.nav-div p{
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+.nav-div p>img{
+    margin-right: 8px;
+    opacity: 0.5;
+}
+.nav-div li{
+    padding: 10px 15px;
+    font-size: 14px;
+}
+.nav-div li, .nav-div p{
+    cursor:pointer;
+    transition: 0.25s;
+}
+.nav-div li:hover, .nav-div p:hover{
+    background-color: var(--lightergrey);
+}

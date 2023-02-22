@@ -6,14 +6,6 @@ font-family: 'Inconsolata', monospace;
 font-family: 'Inter', sans-serif;
 font-family: 'Poppins', sans-serif;
 */
-
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-}
 :root{
     --first-color:hsl(199, 70%, 20%);
     --second-color:hsl(195, 70%, 27%);
@@ -27,4 +19,16 @@ font-family: 'Poppins', sans-serif;
     --grey: #ccc;
     --lightgrey: #ddd;
     --lightergrey: #eee;
+    --darkgrey: #555
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+a{
+    color:inherit;
 }

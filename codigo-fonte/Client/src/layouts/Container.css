@@ -1,6 +1,8 @@
-#main{
+.container{
     min-height: calc(100vh - 80px);
     width: calc(100% - 200px);
+    padding: 10px;
+    box-sizing: border-box;
 
     background-color: var(--lightergrey);
 
@@ -8,9 +10,9 @@
     left: 200px;
     z-index: 0;
 
-    transition: 0.3s;
+    transition: 0.4s;
 }
 .responsive-container{
-    width: calc(100% - 20px);
-    left: 20px;
+    width: 100%;
+    left: 0px;
 }

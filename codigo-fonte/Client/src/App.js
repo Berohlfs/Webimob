@@ -6,15 +6,15 @@ import Container from './layouts/Container'
 import { useState } from 'react'
 
 function App() {
-  const [responsiveBool, setResponsiveBool] = useState(false)
+  const [responsiveness, setResponsiveness] = useState(false)
   const toggleResponsiveness = ()=> {
-    responsiveBool ? setResponsiveBool(false) : setResponsiveBool(true)
+    responsiveness ? setResponsiveness(false) : setResponsiveness(true)
   }
   return (
     <>
       <Header/>
-      <Menu isResponsive={responsiveBool} toggle={toggleResponsiveness}/>
-      <Container isResponsive={responsiveBool}>
+      <Menu isResponsive={responsiveness} toggle={toggleResponsiveness}/>
+      <Container isResponsive={responsiveness}>
 
       </Container>
     </>

@@ -1,4 +1,4 @@
-nav{
+.menu{
     background-color: var(--white);
     box-shadow: 0 0 0.5em var(--lightgrey);
 
@@ -10,9 +10,36 @@ nav{
     left: 0px ;
     z-index: 1;
 
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 .responsive-menu{
-    left: -180px;
+    left: -200px;
+}
+
+div#toggle-div{
+    background-color: var(--white);
+    padding: 8px 8px 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: calc(50% - 15px);
+    right:-34px;
+
+    transform: rotate(90deg);
+}
+
+.shrink-menu-icon{
+    opacity: 0.45;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.expand-menu-icon{
+    transform: rotate(180deg);
 }

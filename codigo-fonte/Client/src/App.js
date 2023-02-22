@@ -12,7 +12,7 @@ function App() {
   }
   return (
     <>
-      <Header/>
+      <Header title={'PÁGINA INICIAL'}/>
       <Menu isResponsive={responsiveness} toggle={toggleResponsiveness}/>
       <Container isResponsive={responsiveness}>
 

@@ -5,11 +5,16 @@ header{
     box-sizing: border-box;
 
     background-color: var(--first-color);
-    box-shadow: 0 0 0.5em var(--lightgrey);
+    box-shadow: 0 0 0.5em var(--grey);
 
     display:flex;
     align-items: center;
 
     position:relative;
     z-index: 2;
+    color: var(--white);
+}
+header>h1{
+    font-size: 23px;
+    margin-left: 30px;
 }

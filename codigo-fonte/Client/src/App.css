@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/*
+font-family: 'Inconsolata', monospace;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+
 *{
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
+    font-family: 'Inter', sans-serif;
 }
 :root{
     --first-color:hsl(199, 70%, 20%);
@@ -14,6 +24,7 @@
     --transparent:transparent;
 
     --white: #fff;
-    --lightgrey: #ccc;
+    --grey: #ccc;
+    --lightgrey: #ddd;
     --lightergrey: #eee;
 }

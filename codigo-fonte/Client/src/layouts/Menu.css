@@ -1,6 +1,6 @@
 .menu{
     background-color: var(--white);
-    box-shadow: 0 0 0.5em var(--lightgrey);
+    box-shadow: 0 0 0.5em var(--grey);
 
     width: 200px;
     height: calc(100% - 80px);
@@ -14,32 +14,27 @@
 }
 
 .responsive-menu{
-    left: -200px;
+    left: -180px;
 }
 
 div#toggle-div{
-    background-color: var(--white);
-    padding: 8px 8px 5px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    background-color: var(--lightgrey);
+    box-shadow: 0 0 0.2em var(--grey);
+    padding: 30px 0px;
+    border-radius: 15px;
+    box-sizing: border-box;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     position: absolute;
-    top: calc(50% - 15px);
-    right:-34px;
+    top: calc(50% - 42px);
+    right:-12px;
 
-    transform: rotate(90deg);
+    cursor:pointer;
 }
 
-.shrink-menu-icon{
-    opacity: 0.45;
-    transition: 0.4s;
-    cursor: pointer;
-}
-
-.expand-menu-icon{
-    transform: rotate(180deg);
+img#toggle-img{
+    opacity: 0.6;
 }

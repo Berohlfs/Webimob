@@ -1,7 +1,7 @@
 .container{
     min-height: calc(100vh - 80px);
     width: calc(100% - 200px);
-    padding: 10px;
+    padding: 20px 35px;
     box-sizing: border-box;
 
     background-color: var(--lightergrey);
@@ -13,6 +13,6 @@
     transition: 0.4s;
 }
 .responsive-container{
-    width: 100%;
-    left: 0px;
+    width: calc(100% - 20px);
+    left: 20px;
 }

@@ -1,7 +1,6 @@
 import './App.css';
-import Header from './layouts/Header'
-import Menu from './layouts/Menu'
-import Container from './layouts/Container'
+
+import Imobiliarias from './pages/Imobiliarias'
 
 import { useState } from 'react'
 
@@ -13,11 +12,7 @@ function App() {
 
   return (
     <>
-      <Header title={'PÁGINA INICIAL'}/>
-      <Menu isResponsive={responsiveness} toggle={toggleResponsiveness}/>
-      <Container isResponsive={responsiveness}>
-        
-      </Container>
+      <Imobiliarias responsiveFunction={toggleResponsiveness} responsiveBool={responsiveness}/>
     </>
   )
 }

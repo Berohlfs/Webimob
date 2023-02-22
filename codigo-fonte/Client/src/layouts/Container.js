@@ -1,9 +1,9 @@
 import './Container.css'
 
-const Container = ({isResponsive})=> {
+const Container = (props)=> {
     return (
-        <section id='main' className={`container ${isResponsive ? 'responsive-container' : ''}`}>
-            
+        <section id='main' className={`container ${props.isResponsive ? 'responsive-container' : ''}`}>
+            {props.children}
         </section>
     )
 }

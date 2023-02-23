@@ -1,8 +1,8 @@
 //CSS
 import './App.css';
 //Componentes
+import Layout from './layout/Layout'
 import NovaImobiliaria from './pages/NovaImobiliaria'
-import PaginaInicial from './pages/PaginaInicial'
 //Libs
 import { useState } from 'react'
 
@@ -15,9 +15,11 @@ function App() {
   }
 
   return (
-    <>
-      <NovaImobiliaria responsiveFunction={toggleResponsiveness} responsiveState={responsiveness}/>
-    </>
+    <Layout title={'Nova imobiliária'} responsiveState={responsiveness} responsiveFunction={toggleResponsiveness}>
+
+      <NovaImobiliaria/>
+
+    </Layout>
   )
 }
 

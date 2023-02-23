@@ -7,8 +7,6 @@ import { useState } from 'react'
 
 const NavLiExpandable = ({title, array})=> {
 
-    const li_array = array.map((item)=> <a key={String(item.name)} href={item.link}><li>{item.name}</li></a>)
-
     const [expanded, setExpanded] = useState(false)
 
     const toggle = ()=> {
@@ -16,12 +14,17 @@ const NavLiExpandable = ({title, array})=> {
     }
 
     return (
+
         <div className={`nav-div ${expanded ? 'expanded-nav-div' : ''}`}>
+
             <p onClick={toggle}><img src={expand_icon} alt={'Mais'}/><span>{title}</span></p>
+
             <ul>
-                {li_array}
+                {array.map((item)=> <a key={String(item.name)} href={item.link}><li>{item.name}</li></a>)}
             </ul>
+
         </div>
+
     )
 }
 

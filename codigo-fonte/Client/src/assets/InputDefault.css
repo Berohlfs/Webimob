@@ -15,6 +15,7 @@
     left:10px;
     top:13px;
     transition: 0.1s;
+    cursor: text;
 }
 #default-input-div>label.focused{
     top:4px;

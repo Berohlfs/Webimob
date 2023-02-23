@@ -11,7 +11,7 @@ function App() {
   const [responsiveness, setResponsiveness] = useState(false)
 
   const toggleResponsiveness = ()=> {
-    responsiveness ? setResponsiveness(false) : setResponsiveness(true)
+    setResponsiveness(!responsiveness)
   }
 
   return (

@@ -25,11 +25,7 @@ const Menu = (props) => {
 
             <NavLiDefault title={'Apólices'} link={'https://instagram.com'}/>
 
-            <NavLiDefault title={'Imobiliárias'} link={'https://instagram.com'}/>
-
-            <NavLiExpandable title={'Relatórios'} array={[{name : 'Exe1', link : 'https://instagram.com'},{name : 'Ex2', link : 'https://instagram.com'}]}/>
-
-            <NavLiExpandable title={'Logs'} array={[{name : 'Exe1', link : 'https://instagram.com'},{name : 'Ex2', link : 'https://instagram.com'}]}/>
+            <NavLiExpandable title={'Produção'} array={[{name : 'Imobiliárias', link : 'https://instagram.com'}]}/>
 
         </nav>
 

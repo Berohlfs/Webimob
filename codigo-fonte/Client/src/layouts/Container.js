@@ -7,7 +7,7 @@ const Container = (props)=> {
         <section id='main' className={`container ${props.responsiveState ? 'responsive-container' : ''}`}>
 
             {props.children}
-            
+
         </section>
     )
 

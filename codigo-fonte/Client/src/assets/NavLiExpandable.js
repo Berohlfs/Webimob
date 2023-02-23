@@ -10,9 +10,9 @@ const NavLiExpandable = ({title, array})=> {
     const li_array = array.map((item)=> <a key={String(item.name)} href={item.link}><li>{item.name}</li></a>)
 
     const [expanded, setExpanded] = useState(false)
-    
+
     const toggle = ()=> {
-        expanded ? setExpanded(false) : setExpanded(true)
+        setExpanded(!expanded)
     }
 
     return (

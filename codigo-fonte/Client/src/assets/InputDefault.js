@@ -1,25 +1,26 @@
 //CSS
-import './InputMaskedDefault.css'
+import './InputDefault.css'
 //Libs
 import { useState, useRef } from 'react'
+import { IMaskInput } from 'react-imask';
 
-const InputDefault = ({label, size, input_name})=> {
+const InputDefault = ({label='Label', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
 
     const [focused, setFocused] = useState(false)
     let inputEl = useRef()
 
     const toggle = ()=> {
         if(inputEl.current.value === ''){
-            focused ? setFocused(false) : setFocused(true)
+            setFocused(!focused)
         }
     }
 
     return (
-        <div style={{width : size}} id={'default-input-div'} onFocus={toggle} onBlur={toggle}>
+        <div style={{width : input_width}} id={'default-input-div'} onFocus={toggle} onBlur={toggle}>
 
-            <label className={`unfocused ${focused ? 'focused' : ''}`}>{label}</label>
+            <label htmlFor={input_name} className={`unfocused ${focused ? 'focused' : ''}`}>{label}</label>
 
-            <input style={{width : size}} name={input_name} ref={inputEl}/>
+            <IMaskInput type={input_type} id={input_name} mask={input_mask} name={input_name} inputRef={inputEl} />
 
         </div>
     )

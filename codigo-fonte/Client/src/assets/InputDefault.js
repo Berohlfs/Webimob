@@ -4,7 +4,7 @@ import './InputDefault.css'
 import { useState, useRef } from 'react'
 import { IMaskInput } from 'react-imask';
 
-const InputDefault = ({label='Label', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
+const InputDefault = ({label='', input_length='', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
 
     const [focused, setFocused] = useState(false)
     let inputEl = useRef()
@@ -20,7 +20,7 @@ const InputDefault = ({label='Label', input_type='text', input_width='200px' , i
 
             <label htmlFor={input_name} className={`unfocused ${focused ? 'focused' : ''}`}>{label}</label>
 
-            <IMaskInput type={input_type} id={input_name} mask={input_mask} name={input_name} inputRef={inputEl} />
+            <IMaskInput maxLength={input_length} type={input_type} id={input_name} mask={input_mask} name={input_name} inputRef={inputEl} />
 
         </div>
     )

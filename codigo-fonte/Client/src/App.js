@@ -1,7 +1,8 @@
 //CSS
 import './App.css';
 //Componentes
-import Imobiliarias from './pages/Imobiliarias'
+import NovaImobiliaria from './pages/NovaImobiliaria'
+import PaginaInicial from './pages/PaginaInicial'
 //Libs
 import { useState } from 'react'
 
@@ -15,7 +16,7 @@ function App() {
 
   return (
     <>
-      <Imobiliarias responsiveFunction={toggleResponsiveness} responsiveState={responsiveness}/>
+      <NovaImobiliaria responsiveFunction={toggleResponsiveness} responsiveState={responsiveness}/>
     </>
   )
 }

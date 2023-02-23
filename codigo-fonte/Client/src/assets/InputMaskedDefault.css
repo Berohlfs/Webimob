@@ -1,0 +1,29 @@
+#default-input-div{
+    position:relative;
+    display: flex;
+    align-items: center;
+
+    width: 200px;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--third-color);
+    margin: 0 10px 10px 0;
+
+    overflow: hidden;
+}
+#default-input-div>label.unfocused{
+    position:absolute;
+    left:10px;
+    top:13px;
+    transition: 0.1s;
+}
+#default-input-div>label.focused{
+    top:4px;
+    font-size: 11px;
+    color: var(--darkgrey);
+}
+#default-input-div>input{
+    width: 100%;
+    border:none;
+    outline: none;
+    padding: 22px 10px 8px;
+}

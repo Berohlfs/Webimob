@@ -3,15 +3,12 @@ import Header from '../layouts/Header'
 import Menu from '../layouts/Menu'
 import Container from '../layouts/Container'
 
-const Imobiliarias = (props)=> {
+const PaginaInicial = (props)=> {
     return (
         <>
-          <Header title={'PÁGINA INICIAL'}/>
+          <Header title={'Página Inicial'}/>
           <Menu responsiveFunction={props.responsiveFunction} responsiveState={props.responsiveState} />
           <Container responsiveState={props.responsiveState}>
-
-
-            lalala
 
 
           </Container>
@@ -19,4 +16,4 @@ const Imobiliarias = (props)=> {
       )
 }
 
-export default Imobiliarias
+export default PaginaInicial

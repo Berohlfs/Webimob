@@ -9,8 +9,7 @@ font-family: 'Poppins', sans-serif;
 :root{
     --first-color:hsl(199, 70%, 20%);
     --second-color:hsl(195, 70%, 27%);
-    --third-color:hsl(32, 93%, 63%);
-    --fourth-color:hsl(23, 94%, 65%);
+    --third-color:#e8691e;
     --negative-color:rgb(194, 0, 0);
 
     --transparent:transparent;

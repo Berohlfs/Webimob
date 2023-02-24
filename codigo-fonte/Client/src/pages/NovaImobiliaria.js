@@ -1,10 +1,11 @@
 //Componentes
 import InputDefault from '../assets/InputDefault'
 
-const NovaImobiliaria = (props)=> {
+const NovaImobiliaria = ()=> {
 
     return (
         <>
+
           {/* InputDefault props -> label, input_length, input_type, input_width, input_name, input_mask*/}
 
           <InputDefault label={'Razão social'} input_width={'300px'} input_name={'nome'}/>

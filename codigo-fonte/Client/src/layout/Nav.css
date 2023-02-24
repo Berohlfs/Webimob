@@ -3,10 +3,10 @@
     box-shadow: 0 0 0.5em var(--grey);
 
     width: 200px;
-    height: calc(100% - 80px);
+    height: calc(100% - 65px);
 
     position: fixed;
-    top: 80px;
+    top: 65px;
     left: 0px ;
     z-index: 1;
 
@@ -23,7 +23,7 @@
     left: -175px;
 }
 
-div#toggle-div{
+div#toggle-responsiveness-div{
     background-color: var(--lightgrey);
     box-shadow: 0 0 0.2em var(--grey);
     padding: 40px 3px;

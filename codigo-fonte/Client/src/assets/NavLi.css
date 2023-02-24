@@ -1,8 +1,8 @@
 .nav-div{
-    height: 50px;
+    height: 44px;
     overflow: hidden;
     transition: 0.3s;
-    color:var(--darkgrey);
+    color: var(--darkergrey)
 }
 .expanded-nav-div{
     height: auto;
@@ -12,14 +12,14 @@
     font-size: 16px;
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 12px;
 }
 .nav-div p>img{
     margin-right: 8px;
-    opacity: 0.5;
+    opacity: 0.6;
 }
 .nav-div li{
-    padding: 10px 15px;
+    padding: 10px 10px 10px 25px;
     font-size: 14px;
 }
 .nav-div li, .nav-div p{

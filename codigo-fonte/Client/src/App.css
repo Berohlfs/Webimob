@@ -15,10 +15,12 @@ font-family: 'Poppins', sans-serif;
     --transparent:transparent;
 
     --white: #fff;
-    --grey: #ccc;
-    --lightgrey: #ddd;
     --lightergrey: #eee;
-    --darkgrey: #555
+    --lightgrey: #ddd;
+
+    --grey: #ccc;
+    --darkgrey: #555;
+    --darkergrey: #333;
 }
 *{
     margin: 0;
@@ -30,4 +32,9 @@ font-family: 'Poppins', sans-serif;
 }
 a{
     color:inherit;
+}
+h1{
+    font-size: 18px;
+    margin-left: 20px;
+    text-align: center;
 }

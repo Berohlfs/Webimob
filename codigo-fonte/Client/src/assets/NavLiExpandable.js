@@ -4,6 +4,7 @@ import './NavLi.css'
 import expand_icon from '../images/expand-icon-15x9.png'
 //Libs
 import { useState } from 'react'
+import { Link } from "react-router-dom";
 
 const NavLiExpandable = ({title, array})=> {
 
@@ -20,7 +21,7 @@ const NavLiExpandable = ({title, array})=> {
             <p onClick={toggle}><img src={expand_icon} alt={'Mais'}/><span>{title}</span></p>
 
             <ul>
-                {array.map((item)=> <a key={String(item.name)} href={item.link}><li>{item.name}</li></a>)}
+                {array.map((item)=> <Link key={String(item.name)} to={item.link}><li>{item.name}</li></Link>)}
             </ul>
 
         </div>

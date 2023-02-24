@@ -16,7 +16,7 @@ const InputDefault = ({label='', input_length='', input_type='text', input_width
     }
 
     return (
-        <div style={{width : input_width}} id={'default-input-div'} onFocus={toggle} onBlur={toggle}>
+        <div style={{width : input_width}} className={'default-input-div'} onFocus={toggle} onBlur={toggle}>
 
             <label htmlFor={input_name} className={`unfocused ${focused ? 'focused' : ''}`}>{label}</label>
 

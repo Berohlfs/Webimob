@@ -16,9 +16,9 @@ const NavLiExpandable = ({title, array})=> {
 
     return (
 
-        <div className={`nav-div ${expanded ? 'expanded-nav-div' : ''}`}>
+        <div onMouseLeave={toggle} onMouseEnter={toggle} style={{height: expanded ? 44 + (37 * array.length) : 44}} className={'nav-div'}>
 
-            <p onClick={toggle}><img src={expand_icon} alt={'Mais'}/><span>{title}</span></p>
+            <p><img className={`nav-icon ${expanded ? 'reversed-nav-icon' : ''}`} src={expand_icon} alt={'Mais'}/><span>{title}</span></p>
 
             <ul>
                 {array.map((item)=> <Link key={String(item.name)} to={item.link}><li>{item.name}</li></Link>)}

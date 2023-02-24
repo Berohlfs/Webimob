@@ -1,0 +1,10 @@
+.flex-form-div{
+    display:flex;
+    flex-wrap: wrap;
+}
+.flex-form-hr{
+    margin-bottom: 10px;
+}
+.flex-form-h2{
+    margin-bottom: 8px;
+}

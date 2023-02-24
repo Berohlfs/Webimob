@@ -1,12 +1,8 @@
 .nav-div{
-    height: 44px;
+    /* height defined inline */
     overflow: hidden;
     transition: 0.3s;
-    color: var(--darkergrey)
-}
-.expanded-nav-div{
-    height: auto;
-    overflow: auto;
+    color: var(--darkergrey);
 }
 .nav-div p{
     font-size: 16px;
@@ -14,9 +10,13 @@
     align-items: center;
     padding: 12px;
 }
-.nav-div p>img{
+.nav-icon{
     margin-right: 8px;
     opacity: 0.6;
+    transition: 0.3s;
+}
+.reversed-nav-icon{
+    transform: rotate(-180deg);
 }
 .nav-div li{
     padding: 10px 10px 10px 25px;

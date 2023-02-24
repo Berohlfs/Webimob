@@ -10,8 +10,16 @@ import NavLiExpandable from '../assets/NavLiExpandable'
 import NavLiDefault from '../assets/NavLiDefault'
 //Libs
 import { Outlet } from "react-router-dom";
+import { useState } from 'react'
 
-const Layout = ({responsiveState, responsiveFunction})=> {
+const Layout = ()=> {
+
+    const [responsiveness, setResponsiveness] = useState(false)
+
+    const toggleResponsiveness = ()=> {
+        setResponsiveness(!responsiveness)
+    }
+
     return (
 
         <>
@@ -19,9 +27,9 @@ const Layout = ({responsiveState, responsiveFunction})=> {
                 <img src={webimob_logo} alt={'Logo Webimob'}/>
             </header>
 
-            <nav className={`menu ${responsiveState ? 'responsive-menu' : ''}`}>
+            <nav className={`menu ${responsiveness ? 'responsive-menu' : ''}`}>
 
-                <div id={'toggle-responsiveness-div'} onClick={responsiveFunction}>
+                <div id={'toggle-responsiveness-div'} onClick={toggleResponsiveness}>
 
                     <img id={'toggle-img'} src={drag_icon} alt={'expandir/recolher'}/>
 
@@ -33,7 +41,7 @@ const Layout = ({responsiveState, responsiveFunction})=> {
 
             </nav>
 
-            <section className={`container ${responsiveState ? 'responsive-container' : ''}`}>
+            <section className={`container ${responsiveness ? 'responsive-container' : ''}`}>
 
                 <Outlet/>
 

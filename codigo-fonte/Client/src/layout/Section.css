@@ -6,8 +6,10 @@
     background-color: var(--lightergrey);
 
     position:relative;
+    top: 65px;
     left: 200px;
     z-index: 0;
+    overflow-x:scroll;
 
     transition: 0.4s;
 }

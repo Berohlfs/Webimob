@@ -29,6 +29,7 @@ font-family: 'Poppins', sans-serif;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
+    flex-shrink: 0;
 }
 a{
     color:inherit;
@@ -38,7 +39,16 @@ div#page-info-div{
     display:flex;
     align-items: center;
 }
-div#page-info-div>h1{
+h1{
     font-size: 20px;
     color:var(--darkergrey);
+}
+h2{
+    font-size: 13px;
+    color:var(--darkgrey);
+}
+hr{
+    border:none;
+    height: 1px;
+    background-color: var(--grey);
 }

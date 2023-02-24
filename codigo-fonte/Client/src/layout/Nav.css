@@ -18,11 +18,9 @@
 .menu::-webkit-scrollbar{
     display:none;
 }
-
 .responsive-menu{
     left: -175px;
 }
-
 div#toggle-responsiveness-div{
     background-color: var(--lightgrey);
     box-shadow: 0 0 0.2em var(--grey);

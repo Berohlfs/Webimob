@@ -6,22 +6,15 @@ import NovaImobiliaria from './pages/NovaImobiliaria'
 import PaginaInicial from './pages/PaginaInicial'
 //Libs7
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from 'react'
 
 function App() {
-
-  const [responsiveness, setResponsiveness] = useState(false)
-
-  const toggleResponsiveness = ()=> {
-    setResponsiveness(!responsiveness)
-  }
 
   return (
     <BrowserRouter>
 
       <Routes>
 
-        <Route path="/" element={<Layout responsiveState={responsiveness} responsiveFunction={toggleResponsiveness}/>}>
+        <Route path="/" element={<Layout/>}>
 
           <Route index element={<PaginaInicial/>} />
           <Route path={'novaimobiliaria'} element={<NovaImobiliaria/>} />

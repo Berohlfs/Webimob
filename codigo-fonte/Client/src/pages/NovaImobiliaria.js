@@ -9,16 +9,8 @@ const NovaImobiliaria = ()=> {
 
     const [pfpj, setPfpj] = useState(['CNPJ', '00.000.000/0000-00'])
 
-    const [endereco, setEndereco] = useState({active: false, logradouro: '', bairro: '', cidade: '', uf: ''})
-
     const togglePfPj = () => {
       pfpj[0] === 'CNPJ' ? setPfpj(['CPF', '000.000.000-00']) : setPfpj(['CNPJ', '00.000.000/0000-00'])
-    }
-
-    const findAddress = async(cep)=> {
-      const data = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
-      const endereco = await data.json()
-      setEndereco({active: true, logradouro: endereco.logradouro, bairro: endereco.bairro, cidade: endereco.cidade, uf: endereco.uf})
     }
 
     return (
@@ -57,15 +49,7 @@ const NovaImobiliaria = ()=> {
 
             <FlexFormDiv title={'Endereço'}>
 
-              <InputDefault onblur_func={findAddress} label={'CEP'} input_width={'93px'} input_name={'cep'} input_mask={'00000-000'}/>
-
-              <InputDefault input_value={endereco.logradouro} active={endereco.active} label={'Logradouro'} input_width={'250px'} input_name={'logradouro'} input_length={'60'}/>
-
-              <InputDefault input_value={endereco.bairro} active={endereco.active} label={'Bairro'} input_width={'250px'} input_name={'bairro'} input_length={'35'}/>
-
-              <InputDefault input_value={endereco.cidade} active={endereco.active} label={'Cidade'} input_name={'cidade'} input_length={'35'}/>
-
-              <InputDefault input_value={endereco.uf} active={endereco.active} label={'UF'} input_width={'45px'} input_name={'uf'} input_mask={'aa'}/>
+              <InputDefault label={'CEP'} input_width={'93px'} input_name={'cep'} input_mask={'00000-000'}/>
 
             </FlexFormDiv>
 

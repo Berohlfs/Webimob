@@ -4,19 +4,22 @@ import './InputDefault.css'
 import { useState, useRef } from 'react'
 import { IMaskInput } from 'react-imask';
 
-const InputDefault = ({input_dinamic_value='', input_callback=null, input_label='', input_length='', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
+const InputDefault = ({input_dinamic_value='', input_callback='', input_label='', input_length='', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
 
     const [focused, setFocused] = useState(false)
+
+    const [current_value, setCurrentValue] = useState('')
+
     let inputEl = useRef()
 
-    const getValue = ()=> {
-        return inputEl.current.value
-    }
-
     const toggle = ()=> {
-        if(!getValue()){
+        if(!inputEl.current.value){
             setFocused(!focused)
         }
+    }
+
+    const handleValue = (e)=> {
+        setCurrentValue(e.target.value)
     }
 
     return (
@@ -25,13 +28,15 @@ const InputDefault = ({input_dinamic_value='', input_callback=null, input_label=
             <label htmlFor={input_name} className={`unfocused ${focused ? 'focused' : ''}`}>{input_label}</label>
 
             <IMaskInput
-            onBlur={()=>input_callback(inputEl.current.value)}
+            onBlur={input_callback ? ()=>input_callback(inputEl.current.value) : null}
             maxLength={input_length}
             type={input_type}
             id={input_name}
             mask={input_mask}
             name={input_name}
             inputRef={inputEl}
+            value={input_dinamic_value ? input_dinamic_value : current_value}
+            onInput={handleValue}
         />
 
         </div>

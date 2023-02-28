@@ -10,11 +10,22 @@ import Container from "./components/layout/Container";
 import NovaImobiliaria from "./components/pages/NovaImobiliaria";
 import Login from "./components/pages/Login";
 import RotasProtegidas from "./components/pages/RotasProtegidas";
+import Cookies from "universal-cookie";
+import { setAuthToken } from "./components/pages/SetAuthToken";
+import axios from "axios";
+const cookies = new Cookies();
 
 
 function App() {
 
 
+
+  
+
+const token = cookies.get("TOKEN");
+if (token){
+  setAuthToken(token)
+}
 
 
   return (
@@ -26,7 +37,12 @@ function App() {
       <Routes>
         <Route path="/" element= {<Home />} />
         <Route path="/login" element= {<Login />} />
-        <RotasProtegidas path="/imobiliarias" element= {<Imobiliarias />} />
+        
+
+        <Route path="/" element= {<RotasProtegidas/>}>
+          <Route path="/imobiliarias" element= {<Imobiliarias />} />
+        </Route>
+        
         <Route path="/imobiliarias/novaImobiliaria" element= {<NovaImobiliaria />} />
         <Route path="/imobiliarias/detalhesImobiliaria/:id" element= {<NovaImobiliaria detalhes={true}/>} />
       </Routes> 

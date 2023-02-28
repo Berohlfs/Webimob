@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { setAuthToken } from './SetAuthToken';
 
 const cookies  = new Cookies();
 
@@ -30,9 +31,16 @@ function LoginPage() {
   function handleSubmit(event) {
     event.preventDefault();
     axios(config).then((res)=>{
-        cookies.set("TOKEN", res.data.token, {
+        const token = res.data.token
+
+        //setando cookie em todos os caminhos
+        cookies.set("TOKEN", token, {
             path: "/"
         })
+
+        setAuthToken(token)
+
+
         window.location.href = "/imobiliarias"
         console.log(res)
     })
@@ -41,6 +49,9 @@ function LoginPage() {
     })
     
   }
+
+
+
 
   return (
     <form onSubmit={handleSubmit}>

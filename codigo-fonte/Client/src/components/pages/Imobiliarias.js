@@ -16,6 +16,8 @@ function Imobiliarias(){
     
 
 
+
+
     const getImobiliarias = async (filtro) =>{
         try{
             const res = await axios.get(`http://localhost:1324/imobiliarias?sort=${filtro}:asc`);

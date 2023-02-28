@@ -178,7 +178,7 @@ class ImobiliariaController {
   async update(req, res) {
     const schema = Yup.object().shape({
       nome: Yup.string(),
-      cpf_cnpj: Yup.string().string(),
+      cpf_cnpj: Yup.string(),
     });
 
     if (!(await schema.isValid(req.body))) {

@@ -1,3 +1,5 @@
+/* COMPONENTLESS STYLES */
+
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -38,6 +40,7 @@ div#page-info-div{
     margin-bottom: 15px;
     display:flex;
     align-items: center;
+    justify-content: space-between;
 }
 h1{
     font-size: 20px;

@@ -8,6 +8,7 @@ import InputSelectDefault from '../assets/InputSelectDefault'
 import { useState } from 'react'
 import getCep from '../scripts/getCep'
 import bancos from '../scripts/bancos'
+import axios from 'axios'
 //Images
 import save_icon from '../images/save-icon-13x13.png'
 
@@ -25,9 +26,37 @@ const NovaImobiliaria = ()=> {
     getCep(cep_string, setEndereco)
   }
 
-  const postNovaImobiliaria = (e)=> {
+  const postNovaImobiliaria = async(e)=> {
+    if(!e.target.nome.value || !e.target.cpf_cnpj.value){
+      return alert('Preencha os campos "Razão social" e "CPF/CNPJ".')
+    }
     e.preventDefault()
-    alert(e.target)
+    try{
+      await axios.post(`http://192.168.0.99:1324/imobiliarias/`, {
+        nome : e.target.nome.value,
+        cpf_cnpj : e.target.cpf_cnpj.value,
+        apelido : e.target.apelido.value,
+        insc_municipal : e.target.insc_municipal.value,
+        cep : e.target.cep.value,
+        logradouro : e.target.logradouro.value,
+        numero : e.target.numero.value,
+        complemento : e.target.complemento.value,
+        bairro : e.target.bairro.value,
+        cidade : e.target.cidade.value,
+        uf : e.target.uf.value,
+        email1 : e.target.email1.value,
+        email2 : e.target.email2.value,
+        fone1 : e.target.fone1.value,
+        fone2 : e.target.fone2.value,
+        fone3 : e.target.fone3.value,
+        fone4 : e.target.fone4.value
+      })
+      alert('Imobiliária cadastrada com sucesso!')
+    }catch(erro){
+      console.log(erro)
+      alert('Erro de cadastro!')
+    }
+
   }
 
   return (
@@ -49,7 +78,7 @@ const NovaImobiliaria = ()=> {
 
           <InputDefault input_label={pfpj[0]} input_width={'152px'} input_name={'cpf_cnpj'} input_mask={pfpj[1]}/>
 
-          <InputDefault input_label={'Inscrição Municipal'} input_width={'183px'} input_name={'inscricao_municipal'} input_length={'20'}/>
+          <InputDefault input_label={'Inscrição Municipal'} input_width={'183px'} input_name={'insc_municipal'} input_length={'20'}/>
 
         </FlexFormDiv>
 

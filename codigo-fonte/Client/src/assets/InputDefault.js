@@ -4,7 +4,7 @@ import './InputDefault.css'
 import { useState, useRef } from 'react'
 import { IMaskInput } from 'react-imask';
 
-const InputDefault = ({input_value=null, input_callback='', input_label='', input_length='', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
+const InputDefault = ({input_value=null, input_callback='', input_label='', input_length='', input_width='200px' , input_name='', input_mask=''})=> {
 
     const [focused, setFocused] = useState(false)
 
@@ -33,7 +33,6 @@ const InputDefault = ({input_value=null, input_callback='', input_label='', inpu
             <IMaskInput
             onBlur={input_callback ? ()=>input_callback(inputEl.current.value) : null}
             maxLength={input_length}
-            type={input_type}
             id={input_name}
             mask={input_mask}
             name={input_name}

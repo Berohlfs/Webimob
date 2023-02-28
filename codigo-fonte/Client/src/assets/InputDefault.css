@@ -22,9 +22,14 @@
     font-size: 10px;
     color: var(--darkgrey);
 }
-.default-input-div>input{
+.default-input-div>input,select{
     width: 100%;
     border:none;
     outline: none;
+}
+.default-input-div>input{
     padding: 18px 10px 5px;
+}
+.default-input-div>select{
+    padding: 11px 10px 11px;
 }

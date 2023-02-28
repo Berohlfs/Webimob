@@ -1,12 +1,12 @@
 //CSS
 import './ButtonDefault.css'
 
-const ButtonDefault = ({label='Salvar', style='', img_src='', img_alt=''})=> {
+const ButtonDefault = ({button_style=true, img_src='', label='', clickFunc=null, button_form='', button_type='submit'})=> {
     return (
-            <button className={`button-default ${style===true ? 'button-default-positive' : style===false ? 'button-default-negative' : 'button-default-icon'}`}>
+            <button type={button_type} form={button_form} onClick={clickFunc} className={`button-default ${button_style===true ? 'button-default-positive' : button_style===false ? 'button-default-negative' : 'button-default-icon'}`}>
 
                 {label}
-                <img className={`${!img_src && 'button-default-img-hidden'}`} src={img_src} alt={img_alt}/>
+                <img className={`${!img_src && 'img-display-none'}`} src={img_src} alt={'Detalhes'}/>
 
             </button>
     )

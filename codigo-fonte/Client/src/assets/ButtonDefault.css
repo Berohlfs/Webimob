@@ -6,11 +6,15 @@
     align-items: center;
     justify-content: center;
 
-    padding: 5px 8px;
+    padding: 5px 4px 5px 8px;
     color:var(--black);
-    border-radius: 5px;
+    border-radius: 4px;
     cursor:pointer;
     transition: 0.3s;
+}
+.button-default>img{
+    transition: 0.3s;
+    margin: 0 4px;
 }
 
 .button-default-positive{
@@ -23,7 +27,6 @@
     border: none;
     padding: 3px;
 }
-
 .button-default-positive:hover{
     background-color: var(--first-color);
     color:var(--white)
@@ -33,6 +36,10 @@
     color:var(--white)
 }
 
-.button-default-img-hidden{
+.button-default-positive:hover>img,.button-default-negative:hover>img{
+    filter: invert(100%);
+}
+
+.button-default>img.img-display-none{
     display:none;
 }

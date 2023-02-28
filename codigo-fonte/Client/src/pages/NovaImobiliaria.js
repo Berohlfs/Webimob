@@ -3,13 +3,15 @@ import Checkbox from '../assets/Checkbox'
 import InputDefault from '../assets/InputDefault'
 import FlexFormDiv from '../assets/FlexFormDiv'
 import ButtonDefault from '../assets/ButtonDefault'
+import InputSelectDefault from '../assets/InputSelectDefault'
 //Libs
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import getCep from '../scripts/getCep'
+import bancos from '../scripts/bancos'
+//Images
+import save_icon from '../images/save-icon-13x13.png'
 
 const NovaImobiliaria = ()=> {
-
-  let nova_imobiliaria_form = useRef()
 
   const [pfpj, setPfpj] = useState(['CNPJ', '00.000.000/0000-00'])
 
@@ -23,25 +25,25 @@ const NovaImobiliaria = ()=> {
     getCep(cep_string, setEndereco)
   }
 
-  const postValues = (e)=> {
+  const postNovaImobiliaria = (e)=> {
     e.preventDefault()
-    console.log(e.target)
+    alert(e.target)
   }
 
   return (
     <>
       <div id={'page-info-div'}>
         <h1>Nova imobiliária</h1>
-        <ButtonDefault/>
+        <ButtonDefault label={'Salvar'} img_src={save_icon} button_form={'nova-imobiliaria-form'}/>
       </div>
 
-      <form ref={nova_imobiliaria_form} onSubmit={postValues} id={'nova-imobiliaria-form'}>
+      <form onSubmit={postNovaImobiliaria} id={'nova-imobiliaria-form'}>
 
         <FlexFormDiv title={'Informações básicas'}>
 
-          <InputDefault input_label={'Razão social'} input_width={'300px'} input_name={'nome'}/>
+          <InputDefault input_label={'Razão social'} input_width={'300px'} input_name={'nome'} input_length={'60'}/>
 
-          <InputDefault input_label={'Apelido'} input_width={'245px'} input_name={'apelido'} input_length={'25'}/>
+          <InputDefault input_label={'Apelido'} input_width={'245px'} input_name={'apelido'} input_length={'30'}/>
 
           <Checkbox toggle_func={togglePfPj} input_label={'Cadastrar com CPF'} input_name={'pfpj_toggle_form_ignore'}/>
 
@@ -71,13 +73,53 @@ const NovaImobiliaria = ()=> {
 
           <InputDefault input_callback={fetchEndereco} input_label={'CEP'} input_width={'93px'} input_name={'cep'} input_mask={'00000-000'}/>
 
-          <InputDefault input_value={endereco.logradouro} input_label={'Logradouro'} input_width={'200px'} input_name={'logradouro'}/>
+          <InputDefault input_value={endereco.logradouro} input_label={'Logradouro'} input_width={'200px'} input_name={'logradouro'} input_length={'50'}/>
 
-          <InputDefault input_value={endereco.bairro} input_label={'Bairro'} input_width={'200px'} input_name={'bairro'}/>
+          <InputDefault input_label={'Número'} input_width={'73px'} input_name={'numero'} input_mask={'000000'}/>
 
-          <InputDefault input_value={endereco.cidade} input_label={'Cidade'} input_width={'200px'} input_name={'cidade'}/>
+          <InputDefault input_label={'Complemento'} input_width={'115px'} input_name={'complemento'} input_length={'15'}/>
 
-          <InputDefault input_value={endereco.uf} input_label={'UF'} input_width={'93px'} input_name={'uf'}/>
+          <InputDefault input_value={endereco.bairro} input_label={'Bairro'} input_width={'180px'} input_name={'bairro'} input_length={'25'}/>
+
+          <InputDefault input_value={endereco.cidade} input_label={'Cidade'} input_width={'200px'} input_name={'cidade'} input_length={'40'}/>
+
+          <InputDefault input_value={endereco.uf} input_label={'UF'} input_width={'93px'} input_name={'uf'} input_mask={'aa'}/>
+
+        </FlexFormDiv>
+
+        <FlexFormDiv wrap={false} title={'Dados bancários'} hr_display={false}>
+
+          <InputDefault input_label={'Conta Corrente 1'} input_width={'170px'} input_name={'conta-corrente-1'} input_length={'20'}/>
+
+          <InputDefault input_label={'Agência 1'} input_width={'120px'} input_name={'agencia-1'} input_length={'8'}/>
+
+          <InputSelectDefault input_label={'Banco 1'} input_name={'banco1'} options_data={bancos} input_width={'300px'}/>
+
+          <InputDefault input_label={'Descrição 1'} input_width={'300px'} input_name={'descricao-1'} input_length={'100'}/>
+
+        </FlexFormDiv>
+
+        <FlexFormDiv wrap={false} hr_display={false}>
+
+          <InputDefault input_label={'Conta Corrente 2'} input_width={'170px'} input_name={'conta-corrente-2'} input_length={'20'}/>
+
+          <InputDefault input_label={'Agência 2'} input_width={'120px'} input_name={'agencia-2'} input_length={'8'}/>
+
+          <InputSelectDefault input_label={'Banco 2'} input_name={'banco2'} options_data={bancos} input_width={'300px'}/>
+
+          <InputDefault input_label={'Descrição 2'} input_width={'300px'} input_name={'descricao-2'} input_length={'100'}/>
+
+        </FlexFormDiv>
+
+        <FlexFormDiv wrap={false}>
+
+          <InputDefault input_label={'Conta Corrente 3'} input_width={'170px'} input_name={'conta-corrente-3'} input_length={'20'}/>
+
+          <InputDefault input_label={'Agência 3'} input_width={'120px'} input_name={'agencia-3'} input_length={'8'}/>
+
+          <InputSelectDefault input_label={'Banco 3'} input_name={'banco3'} options_data={bancos} input_width={'300px'}/>
+
+          <InputDefault input_label={'Descrição 3'} input_width={'300px'} input_name={'descricao-3'} input_length={'100'}/>
 
         </FlexFormDiv>
 

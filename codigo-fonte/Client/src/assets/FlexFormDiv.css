@@ -2,8 +2,14 @@
     display:flex;
     flex-wrap: wrap;
 }
+.flex-form-div-nowrap{
+    flex-wrap: nowrap;
+}
 .flex-form-hr{
     margin-bottom: 10px;
+}
+.flex-form-hr-display-none{
+    display:none;
 }
 .flex-form-h2{
     margin-bottom: 8px;

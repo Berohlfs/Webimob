@@ -45,11 +45,15 @@ const NovaImobiliaria = ()=> {
             <FlexFormDiv title={'Contato'}>
 
               <InputDefault input_label={'Celular 1'} input_width={'135px'} input_name={'fone1'} input_mask={'(00) 0 0000-0000'}/>
+
               <InputDefault input_label={'Celular 2'} input_width={'135px'} input_name={'fone2'} input_mask={'(00) 0 0000-0000'}/>
+
               <InputDefault input_label={'Celular 3'} input_width={'135px'} input_name={'fone3'} input_mask={'(00) 0 0000-0000'}/>
+
               <InputDefault input_label={'Telefone fixo'} input_width={'122px'} input_name={'fone4'} input_mask={'(00) 0000-0000'}/>
 
               <InputDefault input_label={'E-mail 1'} input_width={'250px'} input_name={'email1'} input_length={'50'}/>
+
               <InputDefault input_label={'E-mail 2'} input_width={'250px'} input_name={'email2'} input_length={'50'}/>
 
             </FlexFormDiv>
@@ -58,11 +62,16 @@ const NovaImobiliaria = ()=> {
 
               <InputDefault input_callback={fetchEndereco} input_label={'CEP'} input_width={'93px'} input_name={'cep'} input_mask={'00000-000'}/>
 
-              <InputDefault input_dinamic_value={endereco.logradouro} input_label={'Logradouro'} input_width={'200px'} input_name={'logradouro'}/>
+              <InputDefault input_value={endereco.logradouro} input_label={'Logradouro'} input_width={'200px'} input_name={'logradouro'}/>
+
+              <InputDefault input_value={endereco.bairro} input_label={'Bairro'} input_width={'200px'} input_name={'bairro'}/>
+
+              <InputDefault input_value={endereco.cidade} input_label={'Cidade'} input_width={'200px'} input_name={'cidade'}/>
+
+              <InputDefault input_value={endereco.uf} input_label={'UF'} input_width={'93px'} input_name={'uf'}/>
 
             </FlexFormDiv>
 
-            <p>{endereco.logradouro},{endereco.bairro},{endereco.cidade},{endereco.uf}</p>
           </form>
 
 

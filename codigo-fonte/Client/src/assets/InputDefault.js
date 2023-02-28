@@ -4,11 +4,9 @@ import './InputDefault.css'
 import { useState, useRef } from 'react'
 import { IMaskInput } from 'react-imask';
 
-const InputDefault = ({input_dinamic_value='', input_callback='', input_label='', input_length='', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
+const InputDefault = ({input_value=null, input_callback='', input_label='', input_length='', input_type='text', input_width='200px' , input_name='', input_mask=''})=> {
 
     const [focused, setFocused] = useState(false)
-
-    const [current_value, setCurrentValue] = useState('')
 
     let inputEl = useRef()
 
@@ -18,8 +16,13 @@ const InputDefault = ({input_dinamic_value='', input_callback='', input_label=''
         }
     }
 
-    const handleValue = (e)=> {
-        setCurrentValue(e.target.value)
+    const addValue = ()=> {
+        inputEl.current.value = input_value
+    }
+
+    if(input_value !== null){
+        toggle()
+        addValue()
     }
 
     return (
@@ -35,8 +38,6 @@ const InputDefault = ({input_dinamic_value='', input_callback='', input_label=''
             mask={input_mask}
             name={input_name}
             inputRef={inputEl}
-            value={input_dinamic_value ? input_dinamic_value : current_value}
-            onInput={handleValue}
         />
 
         </div>

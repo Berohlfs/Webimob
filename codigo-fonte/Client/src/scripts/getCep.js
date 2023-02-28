@@ -4,11 +4,12 @@ const getCep = async(cep, stateSetter)=> {
         return alert('O CEP deve conter 8 números.')
     }
     try{
-        stateSetter({logradouro: 'Carregando...' , bairro: 'Carregando...' , cidade: 'Carregando...' , uf: 'Carregando...' })
+        stateSetter({logradouro: '...' , bairro: '...' , cidade: '...' , uf: '...' })
         const data = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
         const endereco = await data.json()
         if(endereco.erro){
-            stateSetter({logradouro: null , bairro: null , cidade: null , uf: null })
+            stateSetter({logradouro: '' , bairro: '' , cidade: '' , uf: '' })
+            alert('CEP não encontrado.')
         }
         else{
             stateSetter({logradouro: endereco.logradouro, bairro: endereco.bairro, cidade: endereco.localidade, uf: endereco.uf})

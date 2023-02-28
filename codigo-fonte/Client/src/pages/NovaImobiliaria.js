@@ -2,6 +2,7 @@
 import Checkbox from '../assets/Checkbox'
 import InputDefault from '../assets/InputDefault'
 import FlexFormDiv from '../assets/FlexFormDiv'
+import ButtonDefault from '../assets/ButtonDefault'
 //Libs
 import { useState, useRef } from 'react'
 import getCep from '../scripts/getCep'
@@ -31,7 +32,7 @@ const NovaImobiliaria = ()=> {
     <>
       <div id={'page-info-div'}>
         <h1>Nova imobiliária</h1>
-        <button type={'submit'} form={'nova-imobiliaria-form'}>SALVAR</button>
+        <ButtonDefault/>
       </div>
 
       <form ref={nova_imobiliaria_form} onSubmit={postValues} id={'nova-imobiliaria-form'}>

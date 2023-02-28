@@ -23,6 +23,7 @@ font-family: 'Poppins', sans-serif;
     --grey: #ccc;
     --darkgrey: #555;
     --darkergrey: #333;
+    --black: #000;
 }
 *{
     margin: 0;

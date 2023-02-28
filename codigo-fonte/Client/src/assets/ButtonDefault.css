@@ -1,0 +1,38 @@
+.button-default{
+    outline: none;
+    background-color: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 8px;
+    color:var(--black);
+    border-radius: 5px;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+.button-default-positive{
+    border: 1px solid var(--first-color);
+}
+.button-default-negative{
+    border: 1px solid var(--third-color);
+}
+.button-default-icon{
+    border: none;
+    padding: 3px;
+}
+
+.button-default-positive:hover{
+    background-color: var(--first-color);
+    color:var(--white)
+}
+.button-default-negative:hover{
+    background-color: var(--third-color);
+    color:var(--white)
+}
+
+.button-default-img-hidden{
+    display:none;
+}

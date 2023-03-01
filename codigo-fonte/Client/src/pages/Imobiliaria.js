@@ -35,7 +35,7 @@ const Imobiliaria = ({loadingFunc})=> {
 
   const postImobiliaria = async(e)=> {
     if(!e.target.nome.value || !e.target.cpf_cnpj.value){
-      return alert('Preencha os campos "Razão social" e "CPF/CNPJ".')
+      return toast.error('"Razão social" e "CPF/CNPJ" devem ser preenchidos.')
     }
     e.preventDefault()
     try{
@@ -66,8 +66,12 @@ const Imobiliaria = ({loadingFunc})=> {
       toast.success('Imobiliária cadastrada com sucesso!')
     }catch(erro){
       loadingFunc(false)
-      erro.response.status === 406 ? toast.error(erro.response.data) : toast.error('Erro de cadastro.')
       console.log(erro)
+      if(erro.response !== undefined){
+        erro.response.status === 406 ? toast.error(erro.response.data) : toast.error('Erro de cadastro')
+      }else{
+        toast.error('Erro de cadastro')
+      }
     }
 
   }

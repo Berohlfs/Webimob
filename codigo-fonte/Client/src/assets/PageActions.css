@@ -1,7 +1,5 @@
 #page-actions-div{
-    margin-bottom: 15px;
     display:flex;
-    align-items: center;
     justify-content: space-between;
 }
 #page-actions-div>h1{
@@ -10,5 +8,4 @@
 }
 #page-actions-div>div{
     display: flex;
-    align-items: center;
 }

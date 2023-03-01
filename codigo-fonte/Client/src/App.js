@@ -7,8 +7,10 @@ import Imobiliaria from './pages/Imobiliaria'
 import PaginaInicial from './pages/PaginaInicial'
 import TabelaImobiliarias from './pages/TabelaImobiliarias'
 //Libs
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useState } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
       </BrowserRouter>
 
       {loading_state && <LoadingAnimation/>}
+
+      <ToastContainer position={"top-center"} autoClose={3000}/>
     </>
   )
 }

@@ -1,7 +1,7 @@
 //CSS
 import './InputDefault.css'
 //Libs
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { IMaskInput } from 'react-imask';
 
 const InputDefault = ({input_value=null, input_callback='', input_label='', input_length='', input_width='200px' , input_name='', input_mask=''})=> {
@@ -16,14 +16,12 @@ const InputDefault = ({input_value=null, input_callback='', input_label='', inpu
         }
     }
 
-    const addValue = ()=> {
-        inputEl.current.value = input_value
-    }
-
-    if(input_value !== null){
-        toggle()
-        addValue()
-    }
+    useEffect(() => {
+        if(input_value !== null){
+            toggle()
+            inputEl.current.value = input_value
+        }
+    });
 
     return (
         <div style={{width : input_width}} className={'default-input-div'} onFocus={toggle} onBlur={toggle}>
@@ -37,8 +35,7 @@ const InputDefault = ({input_value=null, input_callback='', input_label='', inpu
             mask={input_mask}
             name={input_name}
             inputRef={inputEl}
-        />
-
+            />
         </div>
     )
 }

@@ -7,6 +7,9 @@ import add_icon from '../images/add-icon-12x12.png'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import config from '../scripts/config'
+import { toast } from 'react-toastify'
+import InputDefault from '../assets/InputDefault'
+import FlexFormDiv from '../assets/FlexFormDiv'
 
 const TabelaImobiliarias = ({loadingFunc})=> {
 
@@ -24,7 +27,7 @@ const TabelaImobiliarias = ({loadingFunc})=> {
         }catch(erro){
             loadingFunc(false)
             console.log(erro)
-            alert('ERRO: não foi possível carregar as imobiliárias.')
+            toast.error('Não foi possível carregar as imobiliárias.')
         }
     }
 
@@ -35,9 +38,6 @@ const TabelaImobiliarias = ({loadingFunc})=> {
                 <ButtonDefault label={'Nova'} img_src={add_icon} button_type={'button'} clickFunc={()=> navigate('/novaimobiliaria')}/>
 
             </PageActions>
-
-            <p>{JSON.stringify(imobiliarias_obj)}</p>
-            <button onClick={fetchImobiliarias}>fetch</button>
         </>
     )
 }

@@ -1,6 +1,7 @@
 .flex-form-div{
     display:flex;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
 .flex-form-div-nowrap{
     flex-wrap: nowrap;

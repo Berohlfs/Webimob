@@ -7,10 +7,10 @@ const ButtonDefault = ({button_style=true, img_src='', label='', clickFunc=null,
             <button type={button_type} form={button_form} onClick={clickFunc} className={`button-default ${button_style===true ? 'button-default-positive' : button_style===false ? 'button-default-negative' : 'button-default-icon'}`}>
 
                 {label}
-                <img className={`${!img_src && 'img-display-none'}`} src={img_src} alt={'Detalhes'}/>
+                <img className={`${!img_src && 'img-display-none'}`} src={img_src} alt={''}/>
 
             </button>
-            
+
     )
 }
 

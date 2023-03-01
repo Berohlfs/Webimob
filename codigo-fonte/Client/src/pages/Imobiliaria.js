@@ -4,15 +4,23 @@ import InputDefault from '../assets/InputDefault'
 import FlexFormDiv from '../assets/FlexFormDiv'
 import ButtonDefault from '../assets/ButtonDefault'
 import InputSelectDefault from '../assets/InputSelectDefault'
+import PageActions from '../assets/PageActions'
+import LoadingAnimation from '../assets/LoadingAnimation'
 //Libs
 import { useState } from 'react'
 import getCep from '../scripts/getCep'
 import bancos from '../scripts/bancos'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 //Images
 import save_icon from '../images/save-icon-13x13.png'
+import close_icon from '../images/close-icon-14x14.png'
 
-const NovaImobiliaria = ()=> {
+const Imobiliaria = ()=> {
+
+  const navigate = useNavigate()
+
+  const [loading_state, setLoadingState] = useState(true)
 
   const [pfpj, setPfpj] = useState(['CNPJ', '00.000.000/0000-00'])
 
@@ -26,17 +34,21 @@ const NovaImobiliaria = ()=> {
     getCep(cep_string, setEndereco)
   }
 
-  const postNovaImobiliaria = async(e)=> {
+  const postImobiliaria = async(e)=> {
     if(!e.target.nome.value || !e.target.cpf_cnpj.value){
       return alert('Preencha os campos "Razão social" e "CPF/CNPJ".')
     }
     e.preventDefault()
     try{
-      await axios.post(`http://192.168.0.99:1324/imobiliarias/`, {
+      setLoadingState(true)
+      await axios.post(`http://192.168.51.16:1324/imobiliarias/`, {
         nome : e.target.nome.value,
         cpf_cnpj : e.target.cpf_cnpj.value,
         apelido : e.target.apelido.value,
         insc_municipal : e.target.insc_municipal.value,
+        responsavel : e.target.responsavel.value,
+        parceiro : e.target.parceiro.value,
+        status : e.target.status.value,
         cep : e.target.cep.value,
         logradouro : e.target.logradouro.value,
         numero : e.target.numero.value,
@@ -51,6 +63,7 @@ const NovaImobiliaria = ()=> {
         fone3 : e.target.fone3.value,
         fone4 : e.target.fone4.value
       })
+      setLoadingState(false)
       alert('Imobiliária cadastrada com sucesso!')
     }catch(erro){
       console.log(erro)
@@ -61,12 +74,16 @@ const NovaImobiliaria = ()=> {
 
   return (
     <>
-      <div id={'page-info-div'}>
-        <h1>Nova imobiliária</h1>
-        <ButtonDefault label={'Salvar'} img_src={save_icon} button_form={'nova-imobiliaria-form'}/>
-      </div>
+      <PageActions title={'Nova imobiliária'}>
 
-      <form onSubmit={postNovaImobiliaria} id={'nova-imobiliaria-form'}>
+        <ButtonDefault label={'Cancelar'} img_src={close_icon} button_type={'button'} button_style={false} clickFunc={()=> navigate('/tabelaimobiliarias')}/>
+        <ButtonDefault label={'Salvar'} img_src={save_icon} button_form={'nova-imobiliaria-form'}/>
+
+      </PageActions>
+
+      <LoadingAnimation display={loading_state}/>
+
+      <form onSubmit={postImobiliaria} id={'nova-imobiliaria-form'}>
 
         <FlexFormDiv title={'Informações básicas'}>
 
@@ -80,9 +97,15 @@ const NovaImobiliaria = ()=> {
 
           <InputDefault input_label={'Inscrição Municipal'} input_width={'183px'} input_name={'insc_municipal'} input_length={'20'}/>
 
+          <InputDefault input_label={'Responsável Webimob'} input_width={'190px'} input_name={'responsavel'} input_length={'20'}/>
+
+          <InputSelectDefault input_label={'Parceiro'} input_name={'parceiro'} options_data={[{value : 'DAREDE', label : 'DAREDE'}, {value : 'INMEDIAM', label : 'INMEDIAM'}, {value : 'Produção direta', label : 'Produção Direta'}]} input_width={'150px'}/>
+
+          <InputSelectDefault input_label={'Status'} input_name={'status'} options_data={[{value : 'Inativa', label : 'Inativa'}, {value : 'Ativa', label : 'Ativa'}, {value : 'Em prospecção', label : 'Em prospecção'}]} input_width={'140px'}/>
+
         </FlexFormDiv>
 
-        <FlexFormDiv title={'Contato'}>
+        <FlexFormDiv title={'Contato'} hr_display={false}>
 
           <InputDefault input_label={'Celular 1'} input_width={'135px'} input_name={'fone1'} input_mask={'(00) 0 0000-0000'}/>
 
@@ -91,6 +114,10 @@ const NovaImobiliaria = ()=> {
           <InputDefault input_label={'Celular 3'} input_width={'135px'} input_name={'fone3'} input_mask={'(00) 0 0000-0000'}/>
 
           <InputDefault input_label={'Telefone fixo'} input_width={'122px'} input_name={'fone4'} input_mask={'(00) 0000-0000'}/>
+
+        </FlexFormDiv>
+
+        <FlexFormDiv>
 
           <InputDefault input_label={'E-mail 1'} input_width={'250px'} input_name={'email1'} input_length={'50'}/>
 
@@ -158,4 +185,4 @@ const NovaImobiliaria = ()=> {
   )
 }
 
-export default NovaImobiliaria
+export default Imobiliaria

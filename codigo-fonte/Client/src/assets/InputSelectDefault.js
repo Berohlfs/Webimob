@@ -1,16 +1,16 @@
 //CSS
 import './InputDefault.css'
 
-const InputSelectDefault = ({options_data={}, input_label='lala', input_width='200px' , input_name='d'})=> {
+const InputSelectDefault = ({options_data=[], input_label='', input_width='200px' , input_name=''})=> {
 
     return (
         <div style={{width : input_width}} className={'default-input-div'}>
 
             <select id={input_name} name={input_name}>
 
-                <option key={'default'} disabled hidden>{input_label}</option>
+                <option key={'default'} hidden>{input_label}</option>
 
-                {options_data.map((item)=> <option key={item.label} value={item.value}>{item.value} - {item.label}</option>)}
+                {options_data.map((item)=> <option key={item.label} value={item.value}>{item.label}</option>)}
 
             </select>
 

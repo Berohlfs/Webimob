@@ -1,0 +1,10 @@
+#loading-animation-div{
+    position:fixed;
+    background-color: #666;
+    opacity: 0.5;
+    width: 100%;
+    height: 100vh;
+}
+.loading-animation-div-display-none{
+    display:none;
+}

@@ -7,10 +7,15 @@
 }
 .flex-form-hr{
     margin-bottom: 10px;
+    border:none;
+    height: 1px;
+    background-color: var(--grey);
 }
 .flex-form-hr-display-none{
     display:none;
 }
 .flex-form-h2{
     margin-bottom: 8px;
+    font-size: 13px;
+    color:var(--darkgrey);
 }

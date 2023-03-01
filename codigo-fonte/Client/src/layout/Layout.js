@@ -1,6 +1,6 @@
 //Imagens
 import webimob_logo from '../images/logo-120x18.png'
-import drag_icon from '../images/drag-icon-12x18.png'
+import vertical_more_icon from '../images/vertical-more-icon-8x20.png'
 //CSS
 import './Header.css'
 import './Nav.css'
@@ -31,13 +31,13 @@ const Layout = ()=> {
 
                 <div id={'toggle-responsiveness-div'} onClick={toggleResponsiveness}>
 
-                    <img id={'toggle-img'} src={drag_icon} alt={'expandir/recolher'}/>
+                    <img id={'toggle-img'} src={vertical_more_icon} alt={'expandir/recolher'}/>
 
                 </div>
 
                 <NavLiDefault title={'Página inicial'} link={'/'}/>
 
-                <NavLiExpandable title={'Produção'} array={[{name : 'Imobiliárias', link : '/novaimobiliaria'}]}/>
+                <NavLiExpandable title={'Produção'} array={[{name : 'Imobiliárias', link : '/tabelaimobiliarias'}]}/>
 
             </nav>
 

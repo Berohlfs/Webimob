@@ -29,6 +29,7 @@ if (token){
 
 
   return (
+    <>
 
     <Router>
     <Header />
@@ -47,8 +48,10 @@ if (token){
         <Route path="/imobiliarias/detalhesImobiliaria/:id" element= {<NovaImobiliaria detalhes={true}/>} />
       </Routes> 
     </Container>
-    <ToastContainer autoClose={3000} position={toast.POSITION.TOP_CENTER}/>
+    
     </Router> 
+    <ToastContainer autoClose={3000} position={toast.POSITION.TOP_CENTER}/>
+    </>
   );
 }
 

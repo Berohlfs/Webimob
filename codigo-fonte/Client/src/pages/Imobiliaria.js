@@ -5,20 +5,22 @@ import FlexFormDiv from '../assets/FlexFormDiv'
 import ButtonDefault from '../assets/ButtonDefault'
 import InputSelectDefault from '../assets/InputSelectDefault'
 import PageActions from '../assets/PageActions'
+import LoadingAnimation from '../assets/LoadingAnimation'
 //Libs
 import { useState } from 'react'
 import getCep from '../scripts/getCep'
 import bancos from '../scripts/bancos'
-import config from '../scripts/config'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 //Images
 import save_icon from '../images/save-icon-13x13.png'
 import close_icon from '../images/close-icon-14x14.png'
 
-const Imobiliaria = ({loadingFunc})=> {
+const Imobiliaria = ()=> {
 
   const navigate = useNavigate()
+
+  const [loading_state, setLoadingState] = useState(true)
 
   const [pfpj, setPfpj] = useState(['CNPJ', '00.000.000/0000-00'])
 
@@ -33,13 +35,13 @@ const Imobiliaria = ({loadingFunc})=> {
   }
 
   const postImobiliaria = async(e)=> {
-    e.preventDefault()
     if(!e.target.nome.value || !e.target.cpf_cnpj.value){
       return alert('Preencha os campos "Razão social" e "CPF/CNPJ".')
     }
+    e.preventDefault()
     try{
-      loadingFunc(true)
-      await axios.post(`http://${config.server_ip}/imobiliarias/`, {
+      setLoadingState(true)
+      await axios.post(`http://192.168.51.16:1324/imobiliarias/`, {
         nome : e.target.nome.value,
         cpf_cnpj : e.target.cpf_cnpj.value,
         apelido : e.target.apelido.value,
@@ -61,9 +63,9 @@ const Imobiliaria = ({loadingFunc})=> {
         fone3 : e.target.fone3.value,
         fone4 : e.target.fone4.value
       })
-      loadingFunc(false)
+      setLoadingState(false)
+      alert('Imobiliária cadastrada com sucesso!')
     }catch(erro){
-      loadingFunc(false)
       console.log(erro)
       alert('Erro de cadastro!')
     }
@@ -78,6 +80,8 @@ const Imobiliaria = ({loadingFunc})=> {
         <ButtonDefault label={'Salvar'} img_src={save_icon} button_form={'nova-imobiliaria-form'}/>
 
       </PageActions>
+
+      <LoadingAnimation display={loading_state}/>
 
       <form onSubmit={postImobiliaria} id={'nova-imobiliaria-form'}>
 
@@ -176,6 +180,7 @@ const Imobiliaria = ({loadingFunc})=> {
         </FlexFormDiv>
 
       </form>
+
     </>
   )
 }

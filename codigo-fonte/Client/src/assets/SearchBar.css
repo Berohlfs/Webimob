@@ -25,6 +25,3 @@
 .search-bar-div>button:hover{
     filter: brightness(110%);
 }
-.search-bar-div>button>img{
-   filter: invert(100%);
-}

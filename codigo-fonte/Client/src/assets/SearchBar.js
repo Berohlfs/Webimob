@@ -1,7 +1,7 @@
 //CSS
 import './SearchBar.css'
 //Images
-import search_icon from '../images/search-icon-13x12.png'
+import search_icon from '../images/search-icon-13x13.png'
 
 const SearchBar = ({searchFunc=null, placeholder='', handleFunc=null})=> {
     return (

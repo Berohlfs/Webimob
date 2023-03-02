@@ -7,7 +7,7 @@ import TableDefault from '../assets/TableDefault'
 import add_icon from '../images/add-icon-12x12.png'
 //Libs
 import { useNavigate } from 'react-router-dom'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import config from '../scripts/config'
 import { toast } from 'react-toastify'
 
@@ -17,7 +17,7 @@ const TabelaImobiliarias = ({loadingFunc})=> {
 
     const [search_value, setSearchValue] = useState('')
 
-    const [imobiliarias_obj, setImobiliariasObj] = useState([])
+    const [imobiliarias, setImobiliarias] = useState([])
 
     const [asc_desc, setAscDesc] = useState('asc')
 
@@ -42,7 +42,7 @@ const TabelaImobiliarias = ({loadingFunc})=> {
             const data = await fetch(route)
             const imobiliarias = await data.json()
             loadingFunc(false)
-            setImobiliariasObj(imobiliarias)
+            setImobiliarias(imobiliarias)
             setAscDesc(asc_desc === 'asc' ? 'desc' : 'asc')
         }catch(erro){
             loadingFunc(false)
@@ -64,13 +64,13 @@ const TabelaImobiliarias = ({loadingFunc})=> {
 
             <TableDefault
             headers={[
-                {attribute:'', action:'id', action_name:'Excluir'},
-                {attribute:'', action:'id', action_name:'Detalhes'},
-                {attribute:'ID', action:'id', action_name:''},
-                {attribute:'Nome', action:'NOME', action_name:''},
-                {attribute:'Apelido', action:'APELIDO', action_name:''},
-                {attribute:'Parceiro', action:'PARCEIRO', action_name:''}]}
-            data={imobiliarias_obj}
+                {attribute:'', route_param:'id', action_name:'Excluir'},
+                {attribute:'', route_param:'id', action_name:'Detalhes'},
+                {attribute:'ID', route_param:'id', action_name:''},
+                {attribute:'Nome', route_param:'NOME', action_name:''},
+                {attribute:'Apelido', route_param:'APELIDO', action_name:''},
+                {attribute:'Parceiro', route_param:'PARCEIRO', action_name:''}]}
+            data_array={imobiliarias}
             search={search_value}
             sortFunc={fetchImobiliarias}
             sort_order={asc_desc}

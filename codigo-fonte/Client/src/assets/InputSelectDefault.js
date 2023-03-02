@@ -8,7 +8,7 @@ const InputSelectDefault = ({options_data=[], input_label='', input_width='200px
 
             <select id={input_name} name={input_name}>
 
-                <option key={'default'} hidden>{input_label}</option>
+                <option key={'default'} hidden value=''>{input_label}</option>
 
                 {options_data.map((item)=> <option key={item.label} value={item.value}>{item.label}</option>)}
 

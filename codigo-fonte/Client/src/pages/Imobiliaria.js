@@ -34,10 +34,10 @@ const Imobiliaria = ({loadingFunc})=> {
   }
 
   const postImobiliaria = async(e)=> {
+    e.preventDefault()
     if(!e.target.nome.value || !e.target.cpf_cnpj.value){
       return toast.error('"Razão social" e "CPF/CNPJ" devem ser preenchidos.')
     }
-    e.preventDefault()
     try{
       loadingFunc(true)
       await axios.post(`http://${config.server_ip}/imobiliarias/`, {
@@ -70,7 +70,7 @@ const Imobiliaria = ({loadingFunc})=> {
       if(erro.response !== undefined){
         erro.response.status === 406 ? toast.error(erro.response.data) : toast.error('Erro de cadastro')
       }else{
-        toast.error('Erro de cadastro')
+        toast.error('Erro de conexão com o servidor.')
       }
     }
 

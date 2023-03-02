@@ -38,7 +38,7 @@ function App() {
 
       {loading_state && <LoadingAnimation/>}
 
-      <ToastContainer position={"top-center"} autoClose={3000}/>
+      <ToastContainer position={"top-center"} autoClose={5000}/>
     </>
   )
 }

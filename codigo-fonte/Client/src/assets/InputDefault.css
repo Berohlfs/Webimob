@@ -1,0 +1,35 @@
+.default-input-div{
+    position:relative;
+    display: flex;
+    align-items: center;
+
+    border-radius: 4px;
+    border-bottom: 2px solid var(--third-color);
+    margin: 0 10px 10px 0;
+
+    overflow: hidden;
+}
+.default-input-div>label.unfocused{
+    position:absolute;
+    left:10px;
+    top:11px;
+    transition: 0.1s;
+    cursor: text;
+    font-size: 14px;
+}
+.default-input-div>label.focused{
+    top:4px;
+    font-size: 10px;
+    color: var(--darkgrey);
+}
+.default-input-div>input,select{
+    width: 100%;
+    border:none;
+    outline: none;
+}
+.default-input-div>input{
+    padding: 18px 10px 5px;
+}
+.default-input-div>select{
+    padding: 11px 10px 11px;
+}

@@ -1,0 +1,11 @@
+#page-actions-div{
+    display:flex;
+    justify-content: space-between;
+}
+#page-actions-div>h1{
+    font-size: 20px;
+    color:var(--darkergrey);
+}
+#page-actions-div>div{
+    display: flex;
+}

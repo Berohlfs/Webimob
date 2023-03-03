@@ -1,0 +1,36 @@
+.checkbox-div{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin: 0 10px 10px 0;
+}
+.checkbox-div>label{
+    cursor:pointer;
+    font-size: 14px;
+}
+.checkbox-div>input[type='checkbox']{
+    appearance: none;
+
+    height: 22px;
+    width: 22px;
+    background-color: var(--grey);
+    margin-right: 5px;
+    border-radius: 2px;
+    cursor:pointer;
+    transition: 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkbox-div>input[type='checkbox']::after{
+    content: url('../images/checkmark-icon-12x12.png');
+    opacity: 0;
+    transition: 0.3;
+}
+.checkbox-div>input[type='checkbox']:checked{
+    background-color: var(--third-color);
+}
+.checkbox-div>input[type='checkbox']:checked::after{
+    opacity: 1;
+}

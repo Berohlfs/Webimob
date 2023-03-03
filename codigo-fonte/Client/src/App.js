@@ -1,58 +1,46 @@
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Home from "./components/pages/Home";
-import Imobiliarias from "./components/pages/Imobiliarias";
-import Header from "./components/layout/Header";
-import SideBar from "./components/layout/SideBar";
-import {toast, ToastContainer} from "react-toastify"
-import "react-toastify/dist/ReactToastify.css";
-
-import Container from "./components/layout/Container";
-import NovaImobiliaria from "./components/pages/NovaImobiliaria";
-import Login from "./components/pages/Login";
-import RotasProtegidas from "./components/pages/RotasProtegidas";
-import Cookies from "universal-cookie";
-import { setAuthToken } from "./components/pages/SetAuthToken";
-import axios from "axios";
-const cookies = new Cookies();
-
+//CSS
+import './App.css';
+//Componentes
+import Layout from './layout/Layout'
+import LoadingAnimation from './assets/LoadingAnimation'
+import Imobiliaria from './pages/Imobiliaria'
+import PaginaInicial from './pages/PaginaInicial'
+import TabelaImobiliarias from './pages/TabelaImobiliarias'
+//Libs
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useState } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
-
-
-  
-
-const token = cookies.get("TOKEN");
-if (token){
-  setAuthToken(token)
-}
-
+  const [loading_state, setLoadingState] = useState(false)
 
   return (
     <>
+      <BrowserRouter>
 
-    <Router>
-    <Header />
-    <SideBar /> 
-    <Container>
-      <Routes>
-        <Route path="/" element= {<Home />} />
-        <Route path="/login" element= {<Login />} />
-        
+        <Routes>
 
-        <Route path="/" element= {<RotasProtegidas/>}>
-          <Route path="/imobiliarias" element= {<Imobiliarias />} />
-        </Route>
-        
-        <Route path="/imobiliarias/novaImobiliaria" element= {<NovaImobiliaria />} />
-        <Route path="/imobiliarias/detalhesImobiliaria/:id" element= {<NovaImobiliaria detalhes={true}/>} />
-      </Routes> 
-    </Container>
-    
-    </Router> 
-    <ToastContainer autoClose={3000} position={toast.POSITION.TOP_CENTER}/>
+          <Route path="/" element={<Layout/>}>
+
+            <Route index element={<PaginaInicial/>} />
+
+            <Route path={'novaimobiliaria'} element={<Imobiliaria loadingFunc={setLoadingState}/>} />
+
+            <Route path={'tabelaimobiliarias'} element={<TabelaImobiliarias loadingFunc={setLoadingState}/>} />
+
+          </Route>
+
+        </Routes>
+
+      </BrowserRouter>
+
+      {loading_state && <LoadingAnimation/>}
+
+      <ToastContainer position={"top-center"} autoClose={5000}/>
     </>
-  );
+  )
 }
 
 export default App;

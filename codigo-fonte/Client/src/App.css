@@ -1,0 +1,39 @@
+/* COMPONENTLESS STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/*
+font-family: 'Inconsolata', monospace;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+*/
+:root{
+    --first-color:hsl(199, 70%, 20%);
+    --second-color:hsl(195, 70%, 27%);
+    --third-color:#e8691e;
+    --negative-color:rgb(194, 0, 0);
+
+    --transparent:transparent;
+
+    --white: #fff;
+    --lightergrey: #eee;
+    --lightgrey: #ddd;
+
+    --grey: #ccc;
+    --darkgrey: #555;
+    --darkergrey: #333;
+    --black: #000;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+a{
+    color:inherit;
+}

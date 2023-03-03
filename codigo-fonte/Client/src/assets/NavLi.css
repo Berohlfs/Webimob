@@ -1,0 +1,31 @@
+.nav-div{
+    /* height defined inline */
+    overflow: hidden;
+    transition: 0.3s;
+    color: var(--darkergrey);
+}
+.nav-div p{
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+.nav-icon{
+    margin-right: 8px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.reversed-nav-icon{
+    transform: rotate(-180deg);
+}
+.nav-div li{
+    padding: 10px 10px 10px 25px;
+    font-size: 14px;
+}
+.nav-div li, .nav-div p{
+    cursor:pointer;
+    transition: 0.25s;
+}
+.nav-div li:hover, .nav-div p:hover{
+    background-color: var(--lightergrey);
+}

@@ -16,7 +16,7 @@ const upload = multer(multerConfig);
 // Sessions
 router.post('/sessions', sessions.create);
 
-router.use(auth);
+//router.use(auth);
 
 // Imobiliarias
 router.get('/imobiliarias', imobiliarias.index);

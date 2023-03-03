@@ -10,7 +10,7 @@ class Imobiliaria extends Model {
         CPF_CNPJ: {
           type: Sequelize.STRING(18),
         },
-        INTERNO: {
+        RESPONSAVEL: {
           type: Sequelize.STRING(40),
         },
         APELIDO: {
@@ -38,6 +38,9 @@ class Imobiliaria extends Model {
         },
         CIDADE: {
           type: Sequelize.STRING(80),
+        },
+        BAIRRO: {
+          type: Sequelize.STRING,
         },
         UF: {
           type: Sequelize.STRING(2),

@@ -122,9 +122,10 @@ class ImobiliariaController {
     ];
 
     const fones = [
-      { NUMERO: req.body.fone1, ORDEM: 1 },
-      { NUMERO: req.body.fone2, ORDEM: 2 },
-      { NUMERO: req.body.fone3, ORDEM: 3 },
+      { NUMERO: req.body.fone1, FIXO: false },
+      { NUMERO: req.body.fone2, FIXO: false },
+      { NUMERO: req.body.fone3, FIXO: false },
+      { NUMERO: req.body.fone4, FIXO: false },
     ];
     const schema = Yup.object().shape({
       nome: Yup.string().required(),
@@ -142,7 +143,7 @@ class ImobiliariaController {
         await Imobiliaria.create({
           NOME: req.body.nome,
           CPF_CNPJ: req.body.cpf_cnpj,
-          INTERNO: req.body.interno,
+          RESPONSAVEL: req.body.responsavel,
           APELIDO: req.body.apelido,
           PARCEIRO: req.body.parceiro,
           INSC_MUNICIPAL: req.body.insc_municipal,
@@ -152,6 +153,8 @@ class ImobiliariaController {
           COMPLEMENTO: req.body.complemento,
           CIDADE: req.body.cidade,
           UF: req.body.uf,
+          STATUS: req.body.status,
+          BAIRRO: req.body.bairro,
           email_imobiliarias: emails,
           fone_imobiliarias: fones, // (EAGER-LOADING)
         }, {
@@ -178,7 +181,7 @@ class ImobiliariaController {
   async update(req, res) {
     const schema = Yup.object().shape({
       nome: Yup.string(),
-      cpf_cnpj: Yup.string().string(),
+      cpf_cnpj: Yup.string(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -189,7 +192,7 @@ class ImobiliariaController {
       id: req.params.id, // parametro de roq existente do upsert
       NOME: req.body.nome,
       CPF_CNPJ: req.body.cpf_cnpj,
-      INTERNO: req.body.interno,
+      RESPONSAVEL: req.body.responsavel,
       APELIDO: req.body.apelido,
       PARCEIRO: req.body.parceiro,
       INSC_MUNICIPAL: req.body.insc_municipal,

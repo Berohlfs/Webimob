@@ -111,6 +111,7 @@ function NovaImobiliaria(props){
             await axios
             .post("http://localhost:1324/imobiliarias/",{
             nome: imobiliariaInfo.nome.value,
+            //
             cpf_cnpj: imobiliariaInfo.cpf_cnpj.value,
             interno: imobiliariaInfo.interno.value,
             apelido: imobiliariaInfo.apelido.value,

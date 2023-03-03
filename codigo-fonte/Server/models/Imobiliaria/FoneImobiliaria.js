@@ -4,7 +4,7 @@ class FoneImobiliaria extends Model {
   static init(sequelize) {
     super.init({
       NUMERO: Sequelize.STRING,
-      ORDEM: Sequelize.BOOLEAN,
+      FIXO: Sequelize.BOOLEAN,
     }, {
       sequelize,
       modelName: 'fone_imobiliarias',

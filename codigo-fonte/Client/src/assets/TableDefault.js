@@ -29,34 +29,25 @@ const TableDefault = ({headers=[], data_array=[], sortFunc=null, search='', sort
         <table>
             <thead>
                 <tr>
+                    <th key={'header-excluir'}></th>
+                    <th key={'header-detalhes'}></th>
                     {headers.map((header)=>
 
-                    <th key={`${header.attribute}${header.action_name}`}>
+                        <th key={header.title}><button onClick={()=> sortFunc(search, header.sorting_param, sort_order)}>{header.title}</button></th>
 
-                        {header.attribute &&
-
-                        <button onClick={header.attribute ? ()=> sortFunc(search, header.route_param, sort_order) : null}>{header.attribute}</button>}
-
-                    </th>)}
-
+                    )}
                 </tr>
             </thead>
             <tbody>
-                {data_array.map((data_obj)=>
+                {data_array.map((data_item)=>
+                    <tr key={data_item.id}>
 
-                    <tr key={`${data_obj.id}`}>
+                        <td key={`${data_item.id}-second-action`}><button onClick={()=>accessItem(data_item.id)}>Detalhes</button></td>
+                        <td key={`${data_item.id}-delete`}><button onClick={()=>deleteItem(data_item.id)}>Excluir</button></td>
 
                         {headers.map((header)=>
 
-                            <td key={`${header.action_name}${header.attribute}`}>
-
-                                {header.attribute ?
-
-                                data_obj[header.route_param] :
-
-                                <button onClick={header.action_name === 'Excluir' ? ()=> deleteItem(data_obj[header.route_param]) : ()=> accessItem()}>{header.action_name}</button>}
-
-                            </td>
+                            <td key={`${data_item.id}-${header.sorting_param}`}>{data_item[header.sorting_param]}</td>
 
                         )}
 

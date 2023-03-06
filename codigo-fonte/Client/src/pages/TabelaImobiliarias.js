@@ -64,12 +64,11 @@ const TabelaImobiliarias = ({loadingFunc})=> {
 
             <TableDefault
             headers={[
-                {attribute:'', route_param:'id', action_name:'Excluir'},
-                {attribute:'', route_param:'id', action_name:'Detalhes'},
-                {attribute:'ID', route_param:'id', action_name:''},
-                {attribute:'Nome', route_param:'NOME', action_name:''},
-                {attribute:'Apelido', route_param:'APELIDO', action_name:''},
-                {attribute:'Parceiro', route_param:'PARCEIRO', action_name:''}]}
+                {title:'ID', sorting_param:'id'},
+                {title:'Nome', sorting_param:'NOME'},
+                {title:'Apelido', sorting_param:'APELIDO'},
+                {title:'Parceiro', sorting_param:'PARCEIRO'}
+            ]}
             data_array={imobiliarias}
             search={search_value}
             sortFunc={fetchImobiliarias}

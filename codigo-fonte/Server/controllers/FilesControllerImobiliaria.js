@@ -27,7 +27,7 @@ class FilesControllerImobiliaria {
       });
       return res.status(200).json(arquivos);
     } catch (error) {
-      res.status(500).json({ error });
+      return res.status(500).json({ error });
     }
   }
 

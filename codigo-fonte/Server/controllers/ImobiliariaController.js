@@ -12,6 +12,7 @@ class ImobiliariaController {
       APELIDO,
       PARCEIRO,
       STATUS,
+      SEARCH,
       createdBefore,
       createdAfter,
       updatedBefore,
@@ -32,6 +33,26 @@ class ImobiliariaController {
         NOME: {
           [Op.like]: NOME,
         },
+      };
+    }
+
+    if (SEARCH) {
+      where = {
+        ...where,
+        [Op.or]: [
+          {
+            NOME: {
+              [Op.substring]: SEARCH,
+            },
+          },
+          {
+            CPF_CNPJ: {
+              [Op.substring]: SEARCH,
+            },
+          },
+
+        ],
+
       };
     }
 
@@ -122,10 +143,10 @@ class ImobiliariaController {
     ];
 
     const fones = [
-      { NUMERO: req.body.fone1 /* , FIXO: false */ },
-      { NUMERO: req.body.fone2 /* , FIXO: false */ },
-      { NUMERO: req.body.fone3 /* , FIXO: false */ },
-      { NUMERO: req.body.fone4 /* , FIXO: false */ },
+      { NUMERO: req.body.fone1, FIXO: false },
+      { NUMERO: req.body.fone2, FIXO: false },
+      { NUMERO: req.body.fone3, FIXO: false },
+      { NUMERO: req.body.fone4, FIXO: false },
     ];
     const schema = Yup.object().shape({
       nome: Yup.string().required(),

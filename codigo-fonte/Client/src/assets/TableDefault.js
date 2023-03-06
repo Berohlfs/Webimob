@@ -5,6 +5,9 @@ import axios from 'axios'
 import config from '../scripts/config'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+//Images
+import delete_icon from '../images/delete-icon-16x16.png'
+import edit_icon from '../images/edit-icon-16x16.png'
 
 const TableDefault = ({headers=[], data_array=[], sortFunc=null, search='', sort_order='asc'})=> {
 
@@ -29,27 +32,39 @@ const TableDefault = ({headers=[], data_array=[], sortFunc=null, search='', sort
         <table>
             <thead>
                 <tr>
-                    <th key={'header-excluir'}></th>
-                    <th key={'header-detalhes'}></th>
+
                     {headers.map((header)=>
 
                         <th key={header.title}><button onClick={()=> sortFunc(search, header.sorting_param, sort_order)}>{header.title}</button></th>
 
                     )}
+
+                    <th key={'header-excluir'}></th>
+                    <th key={'header-detalhes'}></th>
+
                 </tr>
             </thead>
             <tbody>
                 {data_array.map((data_item)=>
                     <tr key={data_item.id}>
 
-                        <td key={`${data_item.id}-second-action`}><button onClick={()=>accessItem(data_item.id)}>Detalhes</button></td>
-                        <td key={`${data_item.id}-delete`}><button onClick={()=>deleteItem(data_item.id)}>Excluir</button></td>
-
                         {headers.map((header)=>
 
                             <td key={`${data_item.id}-${header.sorting_param}`}>{data_item[header.sorting_param]}</td>
 
                         )}
+
+                        <td key={`${data_item.id}-second-action`}>
+                            <button onClick={()=>accessItem(data_item.id)}>
+                                <img className={'second-action-image'} src={edit_icon} alt={'detalhes'}/>
+                            </button>
+                        </td>
+
+                        <td key={`${data_item.id}-delete`}>
+                            <button onClick={()=>deleteItem(data_item.id)}>
+                                <img className={'delete-image'} src={delete_icon} alt={'excluir'}/>
+                            </button>
+                        </td>
 
                     </tr>
                 )}

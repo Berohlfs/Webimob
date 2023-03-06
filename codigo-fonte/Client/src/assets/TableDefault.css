@@ -1,36 +1,12 @@
 table{
-    margin-top: 10px;
-    width: 100%;
+    margin-top: 20px;
     border-collapse: collapse;
     overflow: hidden;
-    border-radius: 5px;
-}
-
-table button{
-    outline: none;
-    border: none;
-    display:block;
+    border-radius: 3px;
     width: 100%;
-    text-align: left;
-    cursor:pointer;
-    background-color: transparent;
 }
-table th>button{
-    color:var(--white);
-    padding: 7px 0px;
-}
-table td>button{
-    text-align: center;
-    padding: 5px 0px;
-    font-size: 12px;
-}
-table td>button:hover{
-    color:var(--first-color);
-    font-weight: bold;
-}
-
-table td,th{
-    text-align: left;
+table th,td{
+    padding: 7px 15px 7px;
 }
 table th{
     background-color: var(--first-color);
@@ -43,4 +19,18 @@ table tr:nth-child(odd){
 }
 table tr:last-child{
     border-bottom: 2px solid var(--first-color);
+}
+table button{
+    outline: none;
+    border: none;
+    display:block;
+    cursor:pointer;
+    background-color: transparent;
+    color: var(--white);
+}
+table td img.delete-image,img.second-action-image{
+    transition: 0.2s;
+}
+table td img.delete-image:hover,img.second-action-image:hover{
+    transform: rotate(15deg);
 }

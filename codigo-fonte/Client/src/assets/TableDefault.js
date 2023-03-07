@@ -6,18 +6,21 @@ import config from '../scripts/config'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 //Images
+import sorting_icon from '../images/sorting-icon-16x16.png'
 import delete_icon from '../images/delete-icon-16x16.png'
 import edit_icon from '../images/edit-icon-16x16.png'
+import download_icon from '../images/download-icon-16x16.png'
 
-const TableDefault = ({headers=[], data_array=[], sortFunc=null, search='', sort_order='asc'})=> {
+const TableDefault = ({headers=[], data_array=[], sortFunc=null, search_value='', sort_order='asc', second_action='editar', delete_route=''})=> {
 
     const navigate = useNavigate()
 
     const deleteItem = async (id)=> {
+        let new_delete_route = delete_route.replace('/id',`/${id}`)
         try{
-            await axios.delete(`http://${config.server_ip}/imobiliarias/${id}`)
+            await axios.delete(`http://${config.server_ip}${new_delete_route}`)
             toast.success('Item excluído com sucesso.')
-            sortFunc(search, 'id', sort_order)
+            sortFunc(search_value, 'id', sort_order)
         }catch(erro){
             console.log(erro)
             toast.error('Erro de exclusão.')
@@ -34,29 +37,30 @@ const TableDefault = ({headers=[], data_array=[], sortFunc=null, search='', sort
                 <tr>
 
                     {headers.map((header)=>
-
-                        <th key={header.title}><button onClick={()=> sortFunc(search, header.sorting_param, sort_order)}>{header.title}</button></th>
-
+                        <th key={header.title}>
+                            <button onClick={()=> sortFunc(search_value, header.sorting_param, sort_order)}>
+                                {header.title}<img src={sorting_icon} alt={'ordenar'}/>
+                            </button>
+                        </th>
                     )}
 
                     <th key={'header-excluir'}></th>
-                    <th key={'header-detalhes'}></th>
+                    <th key={'header-second-action'}></th>
 
                 </tr>
             </thead>
             <tbody>
                 {data_array.map((data_item)=>
+
                     <tr key={data_item.id}>
 
                         {headers.map((header)=>
-
                             <td key={`${data_item.id}-${header.sorting_param}`}>{data_item[header.sorting_param]}</td>
-
                         )}
 
                         <td key={`${data_item.id}-second-action`}>
                             <button onClick={()=>accessItem(data_item.id)}>
-                                <img className={'second-action-image'} src={edit_icon} alt={'detalhes'}/>
+                                <img className={'second-action-image'} src={second_action === 'download' ? download_icon : second_action === 'editar' && edit_icon} alt={second_action}/>
                             </button>
                         </td>
 
@@ -67,6 +71,7 @@ const TableDefault = ({headers=[], data_array=[], sortFunc=null, search='', sort
                         </td>
 
                     </tr>
+
                 )}
             </tbody>
         </table>

@@ -30,12 +30,12 @@ const TabelaImobiliarias = ({loadingFunc})=> {
         setSearchValue(e.target.value)
     }
 
-    const fetchImobiliarias = async (busca='', sort_type='NOME', sort_order='asc')=> {
+    const fetchImobiliarias = async (search_value='', sort_type='NOME', sort_order='asc')=> {
         let route
-        if(!busca){
+        if(!search_value){
              route = `http://${config.server_ip}/imobiliarias?sort=${sort_type}:${sort_order}`
         }else{
-             route = `http://${config.server_ip}/imobiliarias?SEARCH=${busca}&&sort=${sort_type}:${sort_order}`
+             route = `http://${config.server_ip}/imobiliarias?SEARCH=${search_value}&&sort=${sort_type}:${sort_order}`
         }
         try{
             loadingFunc(true)
@@ -70,9 +70,11 @@ const TabelaImobiliarias = ({loadingFunc})=> {
                 {title:'Parceiro', sorting_param:'PARCEIRO'}
             ]}
             data_array={imobiliarias}
-            search={search_value}
+            search_value={search_value}
             sortFunc={fetchImobiliarias}
             sort_order={asc_desc}
+            second_action={'editar'}
+            delete_route='/imobiliarias/id'
             />
 
         </>

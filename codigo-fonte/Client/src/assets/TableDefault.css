@@ -23,14 +23,27 @@ table tr:last-child{
 table button{
     outline: none;
     border: none;
-    display:block;
+    display:flex;
+    align-items: center;
     cursor:pointer;
     background-color: transparent;
     color: var(--white);
+}
+table th>button>img{
+    margin-left: 3px;
+    filter:invert(100%)
 }
 table td img.delete-image,img.second-action-image{
     transition: 0.2s;
 }
 table td img.delete-image:hover,img.second-action-image:hover{
-    transform: rotate(15deg);
+    animation: shake 0.3s;
+}
+
+@keyframes shake{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(15deg);}
+    50%{transform: rotate(-15deg);}
+    75%{transform: rotate(10deg);}
+    100%{transform: rotate(0deg);}
 }

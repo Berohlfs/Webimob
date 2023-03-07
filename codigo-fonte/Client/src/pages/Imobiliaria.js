@@ -50,7 +50,7 @@ const Imobiliaria = ({loadingFunc})=> {
         status : e.target.status.value,
         cep : e.target.cep.value,
         logradouro : e.target.logradouro.value,
-        numero : e.target.numero.value,
+        numero : Number(e.target.numero.value),
         complemento : e.target.complemento.value,
         bairro : e.target.bairro.value,
         cidade : e.target.cidade.value,

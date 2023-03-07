@@ -36,7 +36,7 @@ const Imobiliaria = ({loadingFunc})=> {
   const postImobiliaria = async(e)=> {
     e.preventDefault()
     if(!e.target.nome.value || !e.target.cpf_cnpj.value){
-      return toast.error('"Razão social" e "CPF/CNPJ" devem ser preenchidos.')
+      return toast.error('"Razão social" e "CPF/CNPJ" devem ser preenchidos.', {toastId: 'imob-fail'})
     }
     try{
       loadingFunc(true)

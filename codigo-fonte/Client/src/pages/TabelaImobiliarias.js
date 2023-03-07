@@ -47,7 +47,7 @@ const TabelaImobiliarias = ({loadingFunc})=> {
         }catch(erro){
             loadingFunc(false)
             console.log(erro)
-            toast.error('Não foi possível carregar as imobiliárias.')
+            toast.error('Não foi possível carregar as imobiliárias.', {toastId: 'imob-fail'});
         }
     }
 

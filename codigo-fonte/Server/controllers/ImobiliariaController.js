@@ -170,7 +170,7 @@ class ImobiliariaController {
           INSC_MUNICIPAL: req.body.insc_municipal,
           CEP: req.body.cep,
           LOGRADOURO: req.body.logradouro,
-          NUMERO: req.body.numero,
+          NUMERO: Number(req.body.numero),
           COMPLEMENTO: req.body.complemento,
           CIDADE: req.body.cidade,
           UF: req.body.uf,

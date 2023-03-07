@@ -64,7 +64,7 @@ const TabelaImobiliarias = ({loadingFunc})=> {
 
             <TableDefault
             headers={[
-                {title:'ID', sorting_param:'id'},
+                {title:'Código', sorting_param:'id'},
                 {title:'Nome', sorting_param:'NOME'},
                 {title:'Apelido', sorting_param:'APELIDO'},
                 {title:'Parceiro', sorting_param:'PARCEIRO'}

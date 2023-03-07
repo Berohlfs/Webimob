@@ -143,10 +143,10 @@ class ImobiliariaController {
     ];
 
     const fones = [
-      { NUMERO: req.body.fone1, FIXO: false },
-      { NUMERO: req.body.fone2, FIXO: false },
-      { NUMERO: req.body.fone3, FIXO: false },
-      { NUMERO: req.body.fone4, FIXO: false },
+      { NUMERO: req.body.fone1 /* , FIXO: false */ },
+      { NUMERO: req.body.fone2 /* , FIXO: false */ },
+      { NUMERO: req.body.fone3 /* , FIXO: false */ },
+      { NUMERO: req.body.fone4 /* , FIXO: false */ },
     ];
     const schema = Yup.object().shape({
       nome: Yup.string().required(),

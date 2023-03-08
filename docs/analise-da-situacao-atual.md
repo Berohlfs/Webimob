@@ -12,5 +12,5 @@ Para tanto, é necessário listar todos os processos e funcionalidades fornecido
 
 ### Gerenciar imobiliárias
 
-1 - Cadastrar imobiliária.
-1 - Editar imobiliária.
+1. Cadastrar imobiliária.
+1. Editar imobiliária.

@@ -6,11 +6,23 @@ A Webimob é uma corretora de seguros digital especializada no ramo imobiliário
 
 É essencial ressaltar que o Sistema Webimob foi desenvolvido a partir do SAC, um outro sistema que também atua no ramo de seguros. Por esse motivo, inúmeras partes do SAC foram reaproveitadas para desenvolver o Sistema Webimob. No entanto, desde a sua concepção até o presente, o sistema permanece crescendo, criando suas prórprias demandas e, cada vez mais, exigindo sua independência. A situação atual da empresa requer o desenvolvimento de um novíssimo sistema, a fim de iniciar uma nova fase mais duradoura e produtiva.
 
-Para tanto, é necessário listar todos os processos e funcionalidades fornecidos pelo Sistema Webimob atual, para desenvolver o novo sistema. Neste documento, vamos listas cada um destes processos.
+Para tanto, é necessário listar todos os processos e funcionalidades presentes dentro do Sistema Webimob atual. Neste documento, vamos listas cada um destes processos.
 
 ## Processos
 
 ### Gerenciar imobiliárias
 
-1. Cadastrar imobiliária.
+1. Mostrar imobiliárias em um tabela.
+1. Buscar imobiliárias por nome, apelido ou CNPJ.
+1. Ordenar as imobiliárias em ordem crescente ou decrescente.
+1. Paginação de resultados.
+1. Seleção múltipla de imobiliárias.
+1. Cadastrar nova imobiliária.
 1. Editar imobiliária.
+1. Excluir imobiliária.
+1. Gravar anotações/atendimentos.
+1. Copiar regras ou planos de comissão.
+
+### Solicitar Suporte
+
+1. Chamar atendente Webimob por Whatsapp.

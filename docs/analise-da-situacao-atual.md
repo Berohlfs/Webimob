@@ -12,28 +12,30 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 
 ### Gerenciar imobiliárias
 
-- [ ] Mostrar imobiliárias em um tabela.
-- [ ] Buscar imobiliárias por nome, apelido ou CNPJ.
-- [ ] Ordenar as imobiliárias em ordem crescente ou decrescente.
-- [ ] Paginação da tabela de imobiliárias.
-- [ ] Seleção múltipla de imobiliárias.
-- [ ] Copiar regras ou planos de comissão de uma imobiliária.
-- [ ] Mostrar imobiliárias inativas.
-- [ ] Exportar relatório de imobiliárias em excel.
+1. Mostrar imobiliárias em um tabela.
+1. Buscar imobiliárias por nome, apelido ou CNPJ.
+1. Ordenar as imobiliárias em ordem crescente ou decrescente.
+1. Paginação da tabela de imobiliárias.
+1. Seleção múltipla de imobiliárias.
+1. Copiar regras ou planos de comissão de uma imobiliária.
+1. Mostrar imobiliárias inativas.
+1. Exportar relatório de imobiliárias em excel.
+1. Cadastrar nova imobiliária.
+1. Editar imobiliária.
+1. Excluir imobiliária.
+1. Gravar anotações sobre imobiliária.
+1. Gravar atendimentos da imobiliária.
+1. Anexar documentos da imobiliária.
+1. Gravar lista de contatos da imobiliária.
+1. Visualizar regras de comissão da imobiliária.
+1. Enviar e-mail para a imobiliária.
+1. Visualizar logs de usuário da imobiliária.
+1. Tranferência de documentos de uma imobiliária para outra.
+1. Desativar imobiliária.
 
-- [ ] Cadastrar nova imobiliária.
-- [ ] Editar imobiliária.
-- [ ] Excluir imobiliária.
+### Gerenciar parceiros
 
-- [ ] Gravar anotações sobre imobiliária.
-- [ ] Gravar atendimentos da imobiliária.
-- [ ] Anexar documentos da imobiliária.
-- [ ] Gravar lista de contatos da imobiliária.
-- [ ] Visualizar regras de comissão da imobiliária.
-- [ ] Enviar e-mail para a imobiliária.
-- [ ] Visualizar logs de usuário da imobiliária.
-- [ ] Tranferência de documentos de uma imobiliária para outra.
-- [ ] Desativar imobiliária.
+1. Processos herdados de **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto item 15).
 
 ### Solicitar Suporte
 

@@ -12,17 +12,17 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 
 ### Gerenciar imobiliárias
 
-1. Mostrar imobiliárias em um tabela.
-1. Buscar imobiliárias por nome, apelido ou CNPJ.
-1. Ordenar as imobiliárias em ordem crescente ou decrescente.
-1. Paginação de resultados.
-1. Seleção múltipla de imobiliárias.
-1. Cadastrar nova imobiliária.
-1. Editar imobiliária.
-1. Excluir imobiliária.
-1. Gravar anotações/atendimentos.
-1. Copiar regras ou planos de comissão.
+- [x] Mostrar imobiliárias em um tabela.
+- [x] Buscar imobiliárias por nome, apelido ou CNPJ.
+- [x] Ordenar as imobiliárias em ordem crescente ou decrescente.
+- [x] Paginação de resultados.
+- [x] Seleção múltipla de imobiliárias.
+- [x] Cadastrar nova imobiliária.
+- [x] Editar imobiliária.
+- [x] Excluir imobiliária.
+- [x] Gravar anotações/atendimentos.
+- [x] Copiar regras ou planos de comissão.
 
 ### Solicitar Suporte
 
-1. Chamar atendente Webimob por Whatsapp.
+- [x] Chamar atendente Webimob por Whatsapp.

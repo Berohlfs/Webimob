@@ -39,4 +39,4 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 
 ### Solicitar Suporte
 
-- [ ] Chamar atendente Webimob por Whatsapp.
+1. Chamar atendente Webimob por Whatsapp.

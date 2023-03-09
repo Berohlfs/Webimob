@@ -6,9 +6,9 @@ A Webimob é uma corretora de seguros digital especializada no ramo imobiliário
 
 É essencial ressaltar que o Sistema Webimob foi desenvolvido a partir do SAC, um outro sistema que também atua no ramo de seguros. Por esse motivo, inúmeras partes do SAC foram reaproveitadas para desenvolver o Sistema Webimob. No entanto, desde a sua concepção até o presente, o sistema permanece crescendo, criando suas prórprias demandas e, cada vez mais, exigindo sua independência. A situação atual da empresa requer o desenvolvimento de um novíssimo sistema, a fim de iniciar uma nova fase mais duradoura e produtiva.
 
-Para tanto, é necessário listar todos os processos e funcionalidades presentes dentro do Sistema Webimob atual. Neste documento, vamos listas cada um destes processos.
+Para tanto, é necessário listar todas as funcionalidades presentes dentro do Sistema Webimob atual. Neste documento, vamos listas cada um dessas funcionalidades.
 
-## Processos
+## Conjuntos de processos
 
 ### Gerenciar imobiliárias
 
@@ -16,7 +16,7 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 | --- | --- | --- |
 | GI-1 | Mostrar imobiliárias em um tabela. | Em análise |
 | GI-2 | Buscar imobiliárias por nome, apelido ou CNPJ. | Em análise |
-| GI-3 | Ordenar as imobiliárias em ordem crescente ou decrescente. | Em análise |
+| GI-3 | Ordenar as imobiliárias em ordem crescente ou decrescente partindo de cada coluna. | Em análise |
 | GI-4 | Paginação da tabela de imobiliárias. | Em análise |
 | GI-5 | Seleção múltipla de imobiliárias. | Em análise |
 | GI-6 | Copiar regras ou planos de comissão de uma imobiliária. | Em análise |
@@ -39,14 +39,18 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
-| GP-1 | __*H*__ **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto item 15). | Em análise |
+| GP-1 | __*H*__ **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto GI-15). | Em análise |
+
+### Gerenciar seguradoras
+
+| ID | Atividade | Situação |
+| --- | --- | --- |
+| GS-1 | __*H*__ **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'seguradora(s)' (exceto item GI-6, 13, 15, 16). | Em análise |
+| GS-2 | Cadastrar sucursais da seguradora | Em análise |
+| GS-3 | Cadastrar relacionamentos com produtos | Em análise |
 
 ### Solicitar Suporte
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
 | SS-1 | Chamar atendente Webimob por Whatsapp. | Em análise |
-
-## Processos inativos ou pertencentes somente ao SAC
-
-1. Gerenciar vendedores

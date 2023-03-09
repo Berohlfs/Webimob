@@ -12,7 +12,7 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 
 ### Gerenciar imobiliárias
 
-| ID | Descrição | Situação |
+| ID | Atividade | Situação |
 | --- | --- | --- |
 | GI-1 | Mostrar imobiliárias em um tabela. | Em análise |
 | GI-2 | Buscar imobiliárias por nome, apelido ou CNPJ. | Em análise |
@@ -37,12 +37,12 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 
 ### Gerenciar parceiros
 
-| ID | Descrição | Situação |
+| ID | Atividade | Situação |
 | --- | --- | --- |
 | GP-1 | __*H*__ **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto item 15). | Em análise |
 
 ### Solicitar Suporte
 
-| ID | Descrição | Situação |
+| ID | Atividade | Situação |
 | --- | --- | --- |
 | SS-1 | Chamar atendente Webimob por Whatsapp. | Em análise |

@@ -12,31 +12,37 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 
 ### Gerenciar imobiliárias
 
-1. Mostrar imobiliárias em um tabela. [ ]
-1. Buscar imobiliárias por nome, apelido ou CNPJ. [ ]
-1. Ordenar as imobiliárias em ordem crescente ou decrescente. [ ]
-1. Paginação da tabela de imobiliárias. [ ]
-1. Seleção múltipla de imobiliárias. [ ]
-1. Copiar regras ou planos de comissão de uma imobiliária. [ ]
-1. Mostrar imobiliárias inativas. [ ]
-1. Exportar relatório de imobiliárias em excel. [ ]
-1. Cadastrar nova imobiliária. [ ]
-1. Editar imobiliária. [ ]
-1. Excluir imobiliária. [ ]
-1. Gravar anotações sobre imobiliária. [ ]
-1. Gravar atendimentos da imobiliária. [ ]
-1. Anexar documentos da imobiliária. [ ]
-1. Gravar lista de contatos da imobiliária. [ ]
-1. Visualizar regras de comissão da imobiliária. [ ]
-1. Enviar e-mail para a imobiliária. [ ]
-1. Visualizar logs de usuário da imobiliária. [ ]
-1. Tranferência de documentos de uma imobiliária para outra. [ ]
-1. Desativar imobiliária. [ ]
+| ID | Descrição | Situação |
+| --- | --- | --- |
+| GI-1 | Mostrar imobiliárias em um tabela. | Em análise |
+| GI-2 | Buscar imobiliárias por nome, apelido ou CNPJ. | Em análise |
+| GI-3 | Ordenar as imobiliárias em ordem crescente ou decrescente. | Em análise |
+| GI-4 | Paginação da tabela de imobiliárias. | Em análise |
+| GI-5 | Seleção múltipla de imobiliárias. | Em análise |
+| GI-6 | Copiar regras ou planos de comissão de uma imobiliária. | Em análise |
+| GI-7 | Mostrar imobiliárias inativas. | Em análise |
+| GI-8 | Exportar relatório de imobiliárias em excel. | Em análise |
+| GI-9 | Cadastrar nova imobiliária. | Em análise |
+| GI-10 | Editar imobiliária. | Em análise |
+| GI-11 | Excluir imobiliária. | Em análise |
+| GI-12 | Gravar anotações sobre imobiliária. | Em análise |
+| GI-13 | Gravar atendimentos da imobiliária. | Em análise |
+| GI-14 | Anexar documentos da imobiliária. | Em análise |
+| GI-15 | Gravar lista de contatos da imobiliária. | Em análise |
+| GI-16 | Visualizar regras de comissão da imobiliária. | Em análise |
+| GI-17 | Enviar e-mail para a imobiliária. | Em análise |
+| GI-18 | Visualizar logs de usuário da imobiliária. | Em análise |
+| GI-19 | Tranferência de documentos de uma imobiliária para outra. | Em análise |
+| GI-20 | Desativar imobiliária. | Em análise |
 
 ### Gerenciar parceiros
 
-1. Processos herdados de **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto item 15). [ ]
+| ID | Descrição | Situação |
+| --- | --- | --- |
+| GP-1 | __*H*__ **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto item 15). | Em análise |
 
 ### Solicitar Suporte
 
-1. Chamar atendente Webimob por Whatsapp. [ ]
+| ID | Descrição | Situação |
+| --- | --- | --- |
+| SS-1 | Chamar atendente Webimob por Whatsapp. | Em análise |

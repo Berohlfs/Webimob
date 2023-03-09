@@ -46,3 +46,7 @@ Para tanto, é necessário listar todos os processos e funcionalidades presentes
 | ID | Atividade | Situação |
 | --- | --- | --- |
 | SS-1 | Chamar atendente Webimob por Whatsapp. | Em análise |
+
+## Processos inativos ou pertencentes somente ao SAC
+
+1. Gerenciar vendedores

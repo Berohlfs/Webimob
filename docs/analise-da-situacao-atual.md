@@ -6,9 +6,9 @@ A Webimob é uma corretora de seguros digital especializada no ramo imobiliário
 
 É essencial ressaltar que o Sistema Webimob foi desenvolvido a partir do SAC, um outro sistema que também atua no ramo de seguros. Por esse motivo, inúmeras partes do SAC foram reaproveitadas para desenvolver o Sistema Webimob. No entanto, desde a sua concepção até o presente, o sistema permanece crescendo, criando suas prórprias demandas e, cada vez mais, exigindo sua independência. A situação atual da empresa requer o desenvolvimento de um novíssimo sistema, a fim de iniciar uma nova fase mais duradoura e produtiva.
 
-Para tanto, é necessário listar todas as funcionalidades presentes dentro do Sistema Webimob atual. Neste documento, vamos listas cada um dessas funcionalidades.
+Para tanto, é necessário apontar todas as atividades presentes dentro do Sistema Webimob atual. Neste documento, vamos listar cada um dessas atividades.
 
-## Conjuntos de processos
+## Atividades
 
 ### Gerenciar imobiliárias
 
@@ -39,18 +39,44 @@ Para tanto, é necessário listar todas as funcionalidades presentes dentro do S
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
-| GP-1 | __*H*__ **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto GI-15). | Em análise |
+| GP-1 | __*Herança*__ de **GI**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto GI-15). | Em análise |
+
+### Gerenciar vendedores
+
+| ID | Atividade | Situação |
+| --- | --- | --- |
+| GV-1 | __*Herança*__ de **GI**, substituindo 'imobiliaria(s)' por 'vendedores(s)'. | Em análise |
+| GV-2 | Filtragem avançada de vendedores. | Em análise |
+| GV-3 | Filtrar grupos de vendedores (mesma imobiliária). | Em análise |
+| GV-4 | Vincular vendedor com seguradoras. | Em análise |
 
 ### Gerenciar seguradoras
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
-| GS-1 | __*H*__ **Gerenciar imobiliárias**, substituindo 'imobiliaria(s)' por 'seguradora(s)' (exceto item GI-6, 13, 15, 16). | Em análise |
+| GS-1 | __*Herança*__ de **GI**, substituindo 'imobiliaria(s)' por 'seguradora(s)' (exceto GI-6, 13 e 16). | Em análise |
 | GS-2 | Cadastrar sucursais da seguradora | Em análise |
 | GS-3 | Cadastrar relacionamentos com produtos | Em análise |
+
+### Gerenciar ramos
+
+| ID | Atividade | Situação |
+| --- | --- | --- |
+| GS-1 | __*Herança*__ de **GI**, substituindo 'imobiliaria(s)' por 'ramos(s)' (exceto GI-6 a 8, 12 a 17 e 19). | Em análise |
+| GS-2 | Cadastrar relacionamentos com seguradoras | Em análise |
+
+### Gerenciar ficha de corretora
+
+| ID | Atividade | Situação |
+| --- | --- | --- |
+| GFDC-1 | Salvar dados cadastrais da corretora. | Em análise |
 
 ### Solicitar Suporte
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
 | SS-1 | Chamar atendente Webimob por Whatsapp. | Em análise |
+
+## Atividades obsoletas
+
+1. Configurações > Tabelas de produção > Oficinas

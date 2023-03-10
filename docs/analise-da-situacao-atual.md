@@ -80,7 +80,29 @@ Os formulários para impressão são criados e utilizados para emitir as cotaç�
 | ID | Atividade | Situação |
 | --- | --- | --- |
 | GFPI-1 |  __*Herança*__ de **GI** apenas dos itens GI-1 a 5 e 9 a 11, substituindo 'imobiliaria(s)' por 'formulário(s)'. | Em análise |
-| GFPI | Editar o arquivo do formulário. | Em análise |
+| GFPI-2 | Editar o arquivo do formulário. | Em análise |
+
+### Gerenciar grupos de usuários
+
+Os grupos de usuários são conjuntos de logins que compartilham das mesma capacidades e permições.
+
+| ID | Atividade | Situação |
+| --- | --- | --- |
+| GGDU-1 |  __*Herança*__ de **GI** apenas dos itens GI-1, 3, 4 e 9 a 11, substituindo 'imobiliaria(s)' por 'grupo(s) de usuários'. | Em análise |
+| GGDU-2 | Configurar autorizações do grupo. | Em análise |
+| GGDU-3 | Duplicar grupo. | Em análise |
+| GGDU-2 | Exportar planilha de autorizações do grupo. | Em análise |
+
+### Gerenciar usuários
+
+Os usuários são representam os logins do sistema. Cada um deve se encaixar em um grupo de usuário.
+
+| ID | Atividade | Situação |
+| --- | --- | --- |
+| GU-1 |  __*Herança*__ de **GI** apenas dos itens GI-1 a 5, 4 e 7 a 11, substituindo 'imobiliaria(s)' por 'grupo(s) de usuários'. | Em análise |
+| GU-2 | Enviar mensagem para usuário. | Em análise |
+| GU-3 | Vincular contas de e-mail ao usuário. | Em análise |
+| GU-4 | Mostrar usuário conectados. | Em análise |
 
 ### Solicitar Suporte
 
@@ -94,8 +116,8 @@ A atividade abaixo conecta um usuário a um atendente Webimob.
 
 As atividades obsoletas são aquelas que não são utilizadas por qualquer usuário do sistema. Essas atividades, normalmente, foram criadas para atender alguma demanda do SAC mas não foram removidas durante o desenvolvimento do Sistema Webimob. Alternativamente, atividades obsoletas podem ser ideias antigas que não amadureceram e foram esquecidas.
 
-1. Configurações > Tabelas de Produção > Oficinas > ... (*Seguros Auto - SAC*)
+1. Configurações > Tabelas de Produção > Oficinas > ... (*SAC*)
 1. Configurações > Tabelas de Produção > Vendedores > ... (*Não utilizado*)
-1. Configurações > Tabelas de Produção > Parametrização > ... (*Customização de corretoras parceiras*)
-
-1. Configurações > Atualizadores > ... (*inacessível - SAC*)
+1. Configurações > Configurações gerais > Parametrização > ... (*Customização de corretoras parceiras. Entrará em desuso*)
+1. Configurações > Atualizadores > ... (*SAC*)
+1. Configurações > Controle de usuários > Horários de utilização > ... (*Não utilizado*)

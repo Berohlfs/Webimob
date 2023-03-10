@@ -94,5 +94,8 @@ A atividade abaixo conecta um usuário a um atendente Webimob.
 
 As atividades obsoletas são aquelas que não são utilizadas por qualquer usuário do sistema. Essas atividades, normalmente, foram criadas para atender alguma demanda do SAC mas não foram removidas durante o desenvolvimento do Sistema Webimob. Alternativamente, atividades obsoletas podem ser ideias antigas que não amadureceram e foram esquecidas.
 
-1. Configurações > Tabelas de produção > Oficinas > ...
-1. Configurações > Tabelas de produção > Vendedores > ...
+1. Configurações > Tabelas de Produção > Oficinas > ... (*Seguros Auto - SAC*)
+1. Configurações > Tabelas de Produção > Vendedores > ... (*Não utilizado*)
+1. Configurações > Tabelas de Produção > Parametrização > ... (*Customização de corretoras parceiras*)
+
+1. Configurações > Atualizadores > ... (*inacessível - SAC*)

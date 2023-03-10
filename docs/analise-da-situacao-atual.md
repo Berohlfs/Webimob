@@ -13,7 +13,7 @@ Para tanto, é necessário apontar todas as atividades presentes dentro do Siste
 
 ### Gerenciar imobiliárias
 
-Essas atividades compoem um conjunto de processos responsáveis por manipular e acessar os dados das imobiliárias parceiras. Pode-se dizer que esses dados são a base para o funcionamento do sistema Webimob, considerando que o restante dos processos de produção dependem deles.
+As atividades abaixo compoem um conjunto de processos responsáveis por manipular e acessar os dados das imobiliárias parceiras. Pode-se dizer que esses dados são a base para o funcionamento do sistema Webimob, considerando que o restante dos processos de produção dependem deles.
 
 | ID | Atividade | Situação |
 | --- | --- | --- |

@@ -79,7 +79,7 @@ Os formulários para impressão são criados e utilizados para emitir as cotaç�
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
-| GFPI-1 |  __*Herança*__ de **GI** apenas para os itens GI-1 a 5 e 9 a 11, substituindo 'imobiliaria(s)' por 'formulário(s)'. | Em análise |
+| GFPI-1 |  __*Herança*__ de **GI** apenas dos itens GI-1 a 5 e 9 a 11, substituindo 'imobiliaria(s)' por 'formulário(s)'. | Em análise |
 | GFPI | Editar o arquivo do formulário. | Em análise |
 
 ### Solicitar Suporte

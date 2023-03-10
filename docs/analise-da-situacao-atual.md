@@ -2,7 +2,8 @@
 
 ## Introdução
 
-A Webimob é uma corretora de seguros digital especializada no ramo imobiliário. Fundada em 2019, a empresa nasceu dentro das instalações da Wegman Corretora de Seguros (atual Interweg) com o objetivo de atender a crescente demanda por seguros imobiliários. Por ser uma corretora digital, um sistema web foi concebido e desenvolvido pelos sócios da empresa para facilitar e agilizar a contratação de seguros pelas imobiliárias para seus clientes.
+A Webimob é uma corretora de seguros digital especializada no ramo imobiliário. Fundada em 2019, a empresa nasceu dentro das instalações
+da Wegman Corretora de Seguros (atual Interweg) com o objetivo de atender a crescente demanda por seguros imobiliários. Por ser uma corretora digital, um sistema web foi concebido e desenvolvido pelos sócios da empresa para facilitar e agilizar a contratação de seguros pelas imobiliárias para seus clientes.
 
 É essencial ressaltar que o Sistema Webimob foi desenvolvido a partir do SAC, um outro sistema que também atua no ramo de seguros. Por esse motivo, inúmeras partes do SAC foram reaproveitadas para desenvolver o Sistema Webimob. No entanto, desde a sua concepção até o presente, o sistema permanece crescendo, criando suas prórprias demandas e, cada vez mais, exigindo sua independência. A situação atual da empresa requer o desenvolvimento de um novíssimo sistema, a fim de iniciar uma nova fase mais duradoura e produtiva.
 
@@ -11,6 +12,8 @@ Para tanto, é necessário apontar todas as atividades presentes dentro do Siste
 ## Atividades
 
 ### Gerenciar imobiliárias
+
+Essas atividades compoem um conjunto de processos responsáveis por manipular e acessar os dados das imobiliárias parceiras. Pode-se dizer que esses dados são a base para o funcionamento do sistema Webimob, considerando que o restante dos processos de produção dependem deles.
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
@@ -37,20 +40,15 @@ Para tanto, é necessário apontar todas as atividades presentes dentro do Siste
 
 ### Gerenciar parceiros
 
+Os parceiros de produção são redes de imobiliárias. Quando uma imobiliária vinculada a um parceiro fecha um seguro, o prêmio é repassado para o parceiro e para a imobiliária.
+
 | ID | Atividade | Situação |
 | --- | --- | --- |
 | GP-1 | __*Herança*__ de **GI**, substituindo 'imobiliaria(s)' por 'parceiro(s)' (exceto GI-15). | Em análise |
 
-### Gerenciar vendedores
-
-| ID | Atividade | Situação |
-| --- | --- | --- |
-| GV-1 | __*Herança*__ de **GI**, substituindo 'imobiliaria(s)' por 'vendedores(s)'. | Em análise |
-| GV-2 | Filtragem avançada de vendedores. | Em análise |
-| GV-3 | Filtrar grupos de vendedores (mesma imobiliária). | Em análise |
-| GV-4 | Vincular vendedor com seguradoras. | Em análise |
-
 ### Gerenciar seguradoras
+
+As atividades abaixo, além de salvar alguns dados essenciais das seguradoras, informam o seu status atual (ativa ou inativa).
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
@@ -60,6 +58,8 @@ Para tanto, é necessário apontar todas as atividades presentes dentro do Siste
 
 ### Gerenciar ramos
 
+Os ramos descrevem cada um produtos vendidos pela corretora.
+
 | ID | Atividade | Situação |
 | --- | --- | --- |
 | GS-1 | __*Herança*__ de **GI**, substituindo 'imobiliaria(s)' por 'ramos(s)' (exceto GI-6 a 8, 12 a 17 e 19). | Em análise |
@@ -67,11 +67,24 @@ Para tanto, é necessário apontar todas as atividades presentes dentro do Siste
 
 ### Gerenciar ficha de corretora
 
+A ficha da corretora armazena os dados essenciais da Webimob.
+
 | ID | Atividade | Situação |
 | --- | --- | --- |
 | GFDC-1 | Salvar dados cadastrais da corretora. | Em análise |
 
+### Gerenciar formulários para impressão
+
+Os formulários para impressão são criados e utilizados para emitir as cotações do sistema.
+
+| ID | Atividade | Situação |
+| --- | --- | --- |
+| GFPI-1 |  __*Herança*__ de **GI** apenas para os itens GI-1 a 5 e 9 a 11, substituindo 'imobiliaria(s)' por 'formulário(s)'. | Em análise |
+| GFPI | Editar o arquivo do formulário. | Em análise |
+
 ### Solicitar Suporte
+
+A atividade abaixo conecta um usuário a um atendente Webimob.
 
 | ID | Atividade | Situação |
 | --- | --- | --- |
@@ -79,4 +92,7 @@ Para tanto, é necessário apontar todas as atividades presentes dentro do Siste
 
 ## Atividades obsoletas
 
-1. Configurações > Tabelas de produção > Oficinas
+As atividades obsoletas são aquelas que não são utilizadas por qualquer usuário do sistema. Essas atividades, normalmente, foram criadas para atender alguma demanda do SAC mas não foram removidas durante o desenvolvimento do Sistema Webimob. Alternativamente, atividades obsoletas podem ser ideias antigas que não amadureceram e foram esquecidas.
+
+1. Configurações > Tabelas de produção > Oficinas > ...
+1. Configurações > Tabelas de produção > Vendedores > ...

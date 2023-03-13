@@ -15,7 +15,7 @@ da Wegman Corretora de Seguros (atual Interweg) com o objetivo de atender a cres
 
 1. O time comercial busca por novas imobiliárias.
 1. Uma nova imobiliária é conquistada.
-1. A nova imobiliária recebe um formulário Google e efetuar o preenchimento de seus dados cadastrais.
+1. A nova imobiliária recebe um formulário Google e efetua o preenchimento de seus dados cadastrais.
 1. O formulário envia os dados recolhidos para dentro de uma planilha Google.
 
 #### Cadastro no Sistema Webimob e nas seguradoras
